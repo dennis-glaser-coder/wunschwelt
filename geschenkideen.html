@@ -45,6 +45,17 @@ label{font-size:12px;font-weight:700;display:block;margin-bottom:7px}select{widt
 .occasion-grid>div:last-child{border-right:0;padding-right:0}
 .occasion-grid h3{font-size:clamp(23px,2.6vw,30px)}
 @media(max-width:640px){.hero .aside{padding:19px 20px}.occasion-grid{grid-template-columns:1fr}.occasion-grid>div,.occasion-grid>div:first-child,.occasion-grid>div:last-child{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}.occasion-grid>div:last-child{border-bottom:0}}
+
+/* Asymmetric editorial rhythm, no placeholder imagery. */
+.grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+.product{grid-column:span 3}
+.product:nth-child(4n+1){grid-column:span 4;background:#fcf4ec}
+.product:nth-child(4n+2){grid-column:span 2}
+.product:nth-child(4n+3){grid-column:span 2}
+.product:nth-child(4n+4){grid-column:span 4;background:#fffdf9}
+.product h3{font-size:clamp(23px,2.5vw,29px)}
+@media(max-width:850px){.product:nth-child(n){grid-column:span 3}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.product:nth-child(n){grid-column:span 1}}
 </style>
 <link rel="stylesheet" href="./motion.css">
 </head>
