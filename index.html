@@ -117,11 +117,31 @@ section.content{padding-top:72px}
 .button{border-radius:5px}
 .more{border-radius:5px}
 @media(max-width:680px){.hero-copy{padding:53px 25px 58px}.hero h1{font-size:47px}.paths{display:block}.path,.path:nth-child(1),.path:nth-child(2),.path:nth-child(3){border-right:0;border-bottom:1px solid var(--line);min-height:130px;padding:21px 8px}.path:last-child{border:0}.featured{display:block}.gift{border-right:0;border-bottom:1px solid var(--line);min-height:0}.gift-body,.gift:not(:first-child) .gift-body{padding:22px 0}.results{display:block}.result,.result:nth-child(3n+2),.result:nth-child(3n+3){padding:21px 0;min-height:0}.finder-wrap{margin-top:52px}}
+
+.finder-wrap{margin-top:0;padding:45px 0 60px;background:#f9ede5}
+.finder-header h2{margin-bottom:6px}.filters{margin-top:19px;margin-bottom:15px}
+.hero{margin-top:40px}
+.gift-picture{height:210px;background:#fff;display:grid;place-items:center;padding:15px}
+.gift-picture img,.result-picture img{width:100%;height:100%;object-fit:contain}
+.gift-body{padding-top:19px}
+.result-picture{height:165px;background:#fff;display:grid;place-items:center;padding:9px;margin-bottom:12px}
+.result .textlink{margin-top:auto;display:inline-block}
+@media(max-width:680px){.finder-wrap{padding:32px 0 42px}.hero{margin-top:23px}.gift-picture{height:190px}.result-picture{height:170px}}
 </style>
 </head>
 <body>
 <header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
 <main>
+<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Filtere die Sammlung nach Alter, Budget und Interessen.</p></div>
+<form class="filters" id="filterForm">
+<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
+<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
+<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
+<button class="button filter-button" type="submit">Ergebnisse ansehen →</button></form>
+<div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
+<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Amazon-Suchlinks sind derzeit keine Affiliate-Links.</p>
+</div></section>
 <section class="shell hero" id="start" aria-labelledby="main-title">
 <div class="hero-copy"><p class="eyebrow">Geschenkideen für Kinder</p><h1 id="main-title">Ein Geschenk, das zu diesem Kind passt.</h1><p>Wie alt ist das Kind, was beschäftigt es gerade – und wie viel möchtest du ausgeben? Hier findest du einen guten Anfang.</p><a class="button" href="#finder">Zum Geschenkfinder <span aria-hidden="true">→</span></a></div>
 </section>
@@ -133,20 +153,11 @@ section.content{padding-top:72px}
 </div></section>
 <section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Aus der Sammlung</p><h2>Drei Ideen, die wir mögen</h2></div><a class="textlink" href="#finder">Weitere Ideen entdecken →</a></div>
 <div class="featured">
-<article class="gift"><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Viele Steine, keine feste Anleitung: gut für eigene Bauideen.</p><a class="textlink" href="#finder" data-pick="0">Im Finder ansehen →</a></div></article>
-<article class="gift"><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein erstes gemeinsames Brettspiel mit einfachen Regeln.</p><a class="textlink" href="#finder" data-pick="9">Im Finder ansehen →</a></div></article>
-<article class="gift"><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Ein kompaktes Logikspiel für unterwegs.</p><a class="textlink" href="#finder" data-pick="6">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-picture"><img src="https://steinehelden.de/media/96/48/20/1782115217/10698_Bild8.jpg?ts=1782115217" alt="LEGO Classic Große Bausteine-Box 10698" loading="lazy"></div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Viele Steine, keine feste Anleitung: gut für eigene Bauideen.</p><a class="textlink" href="#finder" data-pick="0">Geschenk ansehen →</a></div></article>
+<article class="gift"><div class="gift-picture"><img src="https://hoehenflug.com/files/productPictures/Bilder_shopOffice/Bilder_Haba/1004655001.jpg" alt="HABA Erster Obstgarten" loading="lazy"></div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein erstes gemeinsames Brettspiel mit einfachen Regeln.</p><a class="textlink" href="#finder" data-pick="9">Geschenk ansehen →</a></div></article>
+<article class="gift"><div class="gift-picture"><img src="https://www.toyworld.com.au/cdn/shop/files/SNV-SG-455_5414301518587_Smart_20Games_20IQ_20Puzzler_20Pro_20_4__Toyworld.jpg?v=1743123640&amp;width=1920" alt="SmartGames IQ Puzzler Pro" loading="lazy"></div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Ein kompaktes Logikspiel für unterwegs.</p><a class="textlink" href="#finder" data-pick="6">Geschenk ansehen →</a></div></article>
 </div></section>
-<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Filtere die Sammlung nach Alter, Budget und Interessen.</p></div>
-<form class="filters" id="filterForm">
-<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
-<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
-<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
-<button class="button filter-button" type="submit">Ergebnisse ansehen →</button></form>
-<div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
-<div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
-<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Amazon-Suchlinks sind derzeit keine Affiliate-Links.</p>
-</div></section>
+
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
 <script>
@@ -183,6 +194,7 @@ const raw=[
 ["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."]
 ];
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
+const productImages={0:"https://steinehelden.de/media/96/48/20/1782115217/10698_Bild8.jpg?ts=1782115217",9:"https://hoehenflug.com/files/productPictures/Bilder_shopOffice/Bilder_Haba/1004655001.jpg",6:"https://www.toyworld.com.au/cdn/shop/files/SNV-SG-455_5414301518587_Smart_20Games_20IQ_20Puzzler_20Pro_20_4__Toyworld.jpg?v=1743123640&width=1920"};
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
 const el=id=>document.getElementById(id);let matches=[],shown=6;
 function draw(){
@@ -192,10 +204,11 @@ function draw(){
  el("resultCount").textContent="("+matches.length+")";
  for(const p of matches.slice(0,shown)){
  const article=document.createElement("article");article.className="result";
+ if(productImages[p.id]){const picture=document.createElement("div");picture.className="result-picture";const img=document.createElement("img");img.src=productImages[p.id];img.alt=p.title;img.loading="lazy";picture.append(img);article.append(picture);}
  const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · bis ca. "+p.budget+" €";
  const h=document.createElement("h3");h.textContent=p.title;
  const desc=document.createElement("p");desc.textContent=p.description;
- const link=document.createElement("a");link.className="textlink";link.href="https://www.amazon.de/s?k="+encodeURIComponent(p.title);link.target="_blank";link.rel="noopener noreferrer sponsored";link.textContent="Auf Amazon suchen ↗";
+ const link=document.createElement("a");link.className="textlink";link.href="https://www.amazon.de/s?k="+encodeURIComponent(p.title);link.target="_blank";link.rel="noopener noreferrer sponsored";link.textContent="Bei Amazon ansehen ↗";
  article.append(meta,h,desc,link);root.append(article);
  }
  if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
