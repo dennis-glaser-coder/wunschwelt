@@ -7,7 +7,7 @@ const raw=[
 ["Ravensburger GraviTrax Starter-Set","bauen",8,12,80,"Kugelbahnen bauen und immer wieder verändern."],
 ["Ravensburger GraviTrax Junior Starter-Set S Desert 24585","bauen",3,7,30,"Ein kleines Kugelbahn-Starterset mit Wüsten-Thema."],
 ["Ravensburger tiptoi Starter-Set Meine Welt","forschen",2,5,80,"Interaktives Buch und Stift für erste Entdeckungen."],
-["Toniebox 2","knobeln",1,12,150,"Hörgeschichten ohne klassisches Display."],
+["Toniebox 2 Starter-Set Meeresgrün mit Kreativ-Tonie Rot","knobeln",1,12,150,"Bildschirmfreies Hörspiel-Starterset mit Kreativ-Tonie."],
 ["SmartGames IQ Puzzler Pro","knobeln",6,12,30,"Kompakte Logikaufgaben für unterwegs."],
 ["KOSMOS AllesKönnerKiste Filz-Bild","kreativ",8,12,30,"Kreatives Gestalten mit Filz und Vorlagen."],
 ["Clementoni AIRO Roboter","forschen",9,12,150,"Interaktives Robotik-Spielzeug."],
@@ -31,6 +31,7 @@ const raw=[
 ["KOSMOS Kristalle züchten","forschen",10,12,30,"Experimentieridee unter Aufsicht."],
 ["Ravensburger KI und DU","forschen",10,12,30,"Interaktiver Einstieg in KI-Themen."],
 ["WAS IST WAS Schlau, schlauer, KI?","forschen",11,12,30,"Sachbuch zum Verständnis von KI."],
-["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."]
+["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."],
+["Pokémon Boosterbundle Mega-Entwicklung – Erhabene Helden (6 Boosterpacks)","knobeln",6,12,50,"Sechs Boosterpacks zum Sammeln und Spielen; Inhalt zufallsabhängig."]
 ];
-const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21"};
+const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","5":"https://www.amazon.de/dp/B0GWK8NZPY?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21","30":"https://www.amazon.de/dp/B0G4RQLHVN?tag=wunschwelt07-21"};
