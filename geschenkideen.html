@@ -27,14 +27,22 @@ label{font-size:12px;font-weight:700;display:block;margin-bottom:7px}select{widt
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.filterbox{grid-template-columns:repeat(3,minmax(0,1fr))}.filterbox button{grid-column:1/-1}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.brand{font-size:25px}nav .navlinks{gap:12px}nav .navlinks a{font-size:12px}.hero{padding:49px 0}.aside{padding-left:17px}.filterbox,.grid,.occasion-grid{grid-template-columns:1fr}.filterbox button{grid-column:auto}.listing{padding-top:47px}.product{min-height:0}.result-head,.footer-inner{display:block}.reset{margin-top:13px}.footer-inner p{margin-top:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Emotionally warmer editorial companion to the main gift finder. */
+.aside{font-size:15px;line-height:1.75}
+.aside-kicker{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:700;color:#ac624c;margin-bottom:16px}
+.aside strong{font:italic clamp(23px,2.5vw,32px)/1.24 'DM Serif Display',Georgia,serif;margin-bottom:16px;letter-spacing:-.015em;color:#794736}
+.aside span:last-child{display:block;color:#736053;font-size:14px}
+.hero .lead{max-width:700px}
+@media(max-width:640px){.aside strong{font-size:25px}.aside-kicker{margin-bottom:9px}}
 </style>
 <link rel="stylesheet" href="./motion.css">
 </head>
 <body>
 <header><nav class="wrap" aria-label="Hauptnavigation"><a class="brand" href="./index.html">wunschwelt<span>.</span></a><div class="navlinks"><a href="./index.html#finder">Geschenkfinder</a><a href="#auswahl">Alle Ideen</a></div></nav></header>
 <main>
-<section class="hero"><div class="wrap hero-inner"><div><p class="eyebrow">Geschenkideen für jeden Anlass</p><h1>Ein Geschenk, das wirklich passt.</h1><p class="lead">Zum Geburtstag, zur Einschulung, zu Weihnachten oder einfach zwischendurch: Hier findest du konkrete Geschenkideen für Kinder – nach Alter, Interessen und ungefährem Budget.</p><div class="chips"><a href="#auswahl" class="chip" data-age="3">Für 3-Jährige →</a><a href="#auswahl" class="chip" data-age="8">Für 8-Jährige →</a><a href="#auswahl" class="chip" data-budget="30">Bis ca. 30 € →</a></div></div><aside class="aside"><strong>Bewusst ausgewählt</strong>Keine erfundenen Produktbewertungen oder vermeintlichen Live-Preise. Die Kaufbuttons führen ausschließlich zu hinterlegten Amazon-Produktlinks.</aside></div></section>
-<section class="wrap listing" id="auswahl"><p class="eyebrow">Finden statt ewig suchen</p><h2>Geschenke nach Alter und Budget</h2><p class="intro">Nutze die Filter, um die Auswahl einzugrenzen. Unsere Budgetangaben sind nur eine grobe Orientierung, keine aktuellen Ladenpreise.</p>
+<section class="hero"><div class="wrap hero-inner"><div><p class="eyebrow">Nicht irgendetwas. Etwas für genau dieses Kind.</p><h1>Weil das schönste Geschenk ein echtes Lächeln ist.</h1><p class="lead">Für den kleinen Baumeister. Die große Geschichtenerzählerin. Für das Kind, das alle zum Mitspielen bringt. Finde eine Idee, die zur Persönlichkeit passt – zum Geburtstag, zu Weihnachten oder einfach so.</p><div class="chips"><a href="#auswahl" class="chip" data-age="3">Für 3-Jährige →</a><a href="#auswahl" class="chip" data-age="8">Für 8-Jährige →</a><a href="#auswahl" class="chip" data-budget="30">Bis ca. 30 € →</a></div></div><aside class="aside"><span class="aside-kicker">Das ist der Gedanke dahinter</span><strong>Nicht möglichst viel schenken. Sondern etwas, das bleibt.</strong><span>Eine neue Lieblingsgeschichte. Ein Bauwerk voller Stolz. Oder dieses „Noch eine Runde!“, bei dem alle lachen.</span></aside></div></section>
+<section class="wrap listing" id="auswahl"><p class="eyebrow">Finden statt ewig suchen</p><h2>Geschenke nach Alter und Budget</h2><p class="intro">Wie alt ist das Kind? Was begeistert es? Und was fühlt sich für dein Budget richtig an? Entdecke passende Ideen statt endloser Wunschlisten. Die Budgets sind ungefähre Orientierungen, keine Live-Preise.</p>
 <form id="giftFilters" class="filterbox">
 <div><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
 <div><label for="budget">Ungefähres Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
@@ -45,10 +53,10 @@ label{font-size:12px;font-weight:700;display:block;margin-bottom:7px}select{widt
 <div class="grid" id="results" aria-live="polite"></div>
 <p class="note">Werbung: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Alle Amazon-Kaufbuttons sind Affiliate-Links. Alters- und Budgetbereiche sind redaktionelle Orientierungen; die tatsächliche Variante, Hersteller-Altersempfehlung, Verfügbarkeit und den Preis bitte vor dem Kauf bei Amazon prüfen. Die Produktzuordnung ist recherchiert, aber nicht für alle Varianten live verifiziert.</p>
 </section>
-<section class="wrap occasions"><p class="eyebrow">Mehr als Weihnachten</p><h2>Für die Momente, die zählen</h2><div class="occasion-grid">
-<div><h3>Geburtstag</h3><p>Ein passendes Geburtstagsgeschenk hängt oft mehr von den Interessen ab als vom Alter allein. Der Filter hilft beim Eingrenzen.</p></div>
-<div><h3>Kleine Überraschung</h3><p>Ob Mitbringsel oder kleine Belohnung: Entdecke kompakte Spiele und Bausets mit einem ungefähren Budgetrahmen.</p></div>
-<div><h3>Feiertage &amp; Feste</h3><p>Auch zu Weihnachten, Ostern und anderen Anlässen bleibt das Wichtigste gleich: Das Geschenk muss zum Kind passen.</p></div>
+<section class="wrap occasions"><p class="eyebrow">Mehr als Weihnachten</p><h2>Weil jeder Anlass anders besonders ist</h2><div class="occasion-grid">
+<div><h3>Geburtstag</h3><p>Ein neuer Geburtstag, neue Lieblingsideen: Schenke etwas, das zu der kleinen Persönlichkeit passt – nicht bloß zur Zahl auf der Torte.</p></div>
+<div><h3>Kleine Überraschung</h3><p>Manchmal ist das größte Lächeln eine ganz kleine Überraschung. Spiele und Bausets findest du auch mit überschaubarem Budget.</p></div>
+<div><h3>Feiertage &amp; Feste</h3><p>Ob Weihnachten, Ostern oder ein gemeinsames Fest: Am schönsten sind die Augenblicke, in denen alle miteinander spielen und staunen.</p></div>
 </div></section>
 </main>
 <footer><div class="wrap footer-inner"><a class="brand" href="./index.html">wunschwelt<span>.</span></a><p>Impressum und Datenschutzerklärung müssen noch mit den tatsächlichen Betreiberangaben vervollständigt werden. Bis dahin bitte keine bezahlte Werbung schalten.</p></div></footer>
