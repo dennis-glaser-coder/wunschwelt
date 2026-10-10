@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#fffaf6">
-<meta name="description" content="wunschwelt. – liebevoll ausgesuchte Geschenkideen für Kinder. Finde passende Ideen nach Alter, Budget und Interessen.">
+<meta name="description" content="wunschwelt. hilft dir, Geschenke für Kinder nach Alter, Interessen und Budget zu finden – ohne endlose Listen.">
 <title>wunschwelt. | Geschenkideen für Kinder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,13 +176,47 @@ section.content{padding-top:72px}
 .moment-lines p:last-child{border:0}
 
 @media(max-width:680px){.hero-photo-caption{left:22px;bottom:21px;font-size:22px}.moment-section{margin-top:43px;padding-top:26px}.moment-layout{grid-template-columns:1fr;gap:9px}.moment-lines p{font-size:14px}}
+
+/* A less templated, more editorial layout */
+.editorial-section{margin-top:72px;padding:40px 0 44px;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(34px,6vw,100px);align-items:end;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.editorial-section h2{font-size:clamp(33px,4vw,47px);max-width:550px;margin-bottom:0}
+.editorial-section>p{color:var(--muted);font-size:16px;line-height:1.85;max-width:430px;margin:0}
+.trend-section{padding-top:62px}
+.trend-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:stretch}
+.trend-card{border-radius:3px;min-height:220px;padding:clamp(22px,3.2vw,35px);border-color:#e7d5ca}
+.trend-card:nth-child(1){grid-column:span 4;background:#f7e9dc}
+.trend-card:nth-child(2){grid-column:span 2;background:#f8f5ed}
+.trend-card:nth-child(3){grid-column:span 3;background:#f4ece6}
+.trend-card:nth-child(4){grid-column:span 3;background:#fffaf5}
+.trend-card h3{font-size:clamp(24px,2.9vw,35px);margin:17px 0 11px}
+.trend-card p{max-width:420px;font-size:14px;line-height:1.75}
+.featured{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px;border-top:0}
+.gift{border:1px solid var(--line);background:#fff;border-radius:4px;min-height:0}
+.gift:last-child{border-right:1px solid var(--line)}
+.gift-picture,.gift:not(:first-child) .gift-picture{height:235px;background:#fff;padding:24px}
+.gift-body,.gift:not(:first-child) .gift-body{padding:22px 25px 27px}
+.gift h3{font-size:clamp(22px,2.5vw,29px)}
+.hero-photo-caption{display:none}
+.result{transition:background-color .2s ease}
+@media(max-width:900px){.trend-card:nth-child(n){grid-column:span 3}.editorial-section{gap:35px}}
+@media(max-width:680px){
+ .editorial-section{margin-top:43px;padding:27px 0 31px;grid-template-columns:1fr;gap:14px}
+ .editorial-section>p{font-size:14px}
+ .trend-section{padding-top:43px}
+ .trend-grid{grid-template-columns:1fr;gap:10px}
+ .trend-card:nth-child(n){grid-column:span 1;min-height:0;padding:24px}
+ .featured{display:grid;grid-template-columns:1fr;gap:15px}
+ .gift,.gift:last-child{border:1px solid var(--line)}
+ .gift-picture,.gift:not(:first-child) .gift-picture{height:205px}
+ .gift-body,.gift:not(:first-child) .gift-body{padding:20px}
+}
 </style>
 <link rel="stylesheet" href="./motion.css">
 </head>
 <body>
 <header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="./geschenkideen.html">Geschenkideen</a><a href="#finder">Geschenkfinder</a></div></nav></header>
 <main>
-<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Wie alt ist das Kind, was liebt es, und was darf das Geschenk kosten? Gemeinsam finden wir etwas Passendes.</p></div>
+<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Alter, Budget und Interessen auswählen – und direkt passende Ideen sehen.</p></div>
 <form class="filters" id="filterForm">
 <div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
 <div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
@@ -191,46 +225,33 @@ section.content{padding-top:72px}
 
 </div></section>
 <section class="shell hero" id="start" aria-labelledby="main-title">
-<div class="hero-copy"><p class="eyebrow">Weil Schenken mehr ist als Auspacken</p><h1 id="main-title">Für den Moment, in dem die Augen leuchten.</h1><p>Das stolze „Schau mal!“ nach dem ersten Bauwerk. Das Lachen bei der nächsten Spielrunde. Oder die Geschichte, die gleich noch einmal gehört werden muss. Wir helfen dir, etwas zu finden, das genau zu diesem Kind passt.</p><a class="button" href="./geschenkideen.html">Etwas Besonderes finden <span aria-hidden="true">→</span></a></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1752652012284-c12c3f65b417?auto=format&amp;fit=crop&amp;w=1300&amp;q=82" alt="Eine Mutter schenkt ihrer Tochter ein verpacktes Geschenk – ein inniger Moment zu Hause" loading="eager" onerror="this.style.display=&#39;none&#39;"><span class="hero-photo-caption">Manchmal ist die Freude das schönste Geschenk.</span></div>
+<div class="hero-copy"><p class="eyebrow">Geschenke finden, ohne lange zu suchen</p><h1 id="main-title">Was schenkt man einem Kind, das schon alles hat?</h1><p>Vielleicht baut es gerade alles auseinander. Vielleicht liebt es Hörgeschichten oder knobelt für sein Leben gern. Hier findest du Ideen, die zu seinen Interessen passen – nicht einfach die nächste Bestsellerliste.</p><a class="button" href="./geschenkideen.html">Geschenke durchstöbern <span aria-hidden="true">→</span></a></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1752652012284-c12c3f65b417?auto=format&amp;fit=crop&amp;w=1300&amp;q=82" alt="Eine Mutter schenkt ihrer Tochter ein verpacktes Geschenk – ein inniger Moment zu Hause" loading="eager" onerror="this.style.display=&#39;none&#39;"></div>
 </section>
-<section class="shell moment-section" aria-labelledby="moment-title">
-<p class="eyebrow">Es sind die Momente danach</p>
-<div class="moment-layout">
-<h2 id="moment-title">Aus einem Geschenk wird ein „Weißt du noch?“</h2>
-<div class="moment-lines">
-<p>Ein Nachmittag, an dem aus ein paar Steinen eine ganze Welt wird.</p>
-<p>Ein „Noch eine Geschichte, bitte!“, obwohl es längst Schlafenszeit ist.</p>
-<p>Eine gemeinsame Spielrunde, bei der niemand auf die Uhr schaut.</p>
-</div>
-</div>
+<section class="shell editorial-section" aria-labelledby="editorial-title">
+<div class="editorial-copy"><p class="eyebrow">Unsere Auswahl</p><h2 id="editorial-title">Erst das Kind, dann das Geschenk.</h2></div>
+<p>Ein gutes Geschenk muss nicht teuer oder besonders ausgefallen sein. Wichtiger ist, was das Kind ohnehin gerne macht: bauen, entdecken, Geschichten hören oder zusammen spielen. Genau danach lässt sich unsere Auswahl filtern.</p>
 </section>
 <section class="shell trend-section" id="themen" aria-labelledby="trend-title">
-<p class="eyebrow">Geschenkideen nach Thema</p><h2 id="trend-title">Was Kinder gerade begeistert</h2>
-<p class="trend-intro">Von Bauabenteuern bis Hörgeschichten: Entdecke passende Ideen aus unserer Sammlung. Wir zeigen nur für eindeutig zugeordnete Produkte einen Amazon-Direktlink.</p>
+<p class="eyebrow">Geschenkideen nach Thema</p><h2 id="trend-title">Womit spielt das Kind gern?</h2>
+<p class="trend-intro">Vier Themen als Einstieg. In den Empfehlungen zeigen wir nur Produkte, für die ein konkreter Amazon-Link hinterlegt ist.</p>
 <div class="trend-grid">
-<article class="trend-card"><span class="micro">Bauen &amp; entdecken</span><h3>LEGO-Geschenke</h3><p>Bausteine und Bausets für verschiedene Altersgruppen – vom ersten DUPLO bis zum kreativen LEGO-Set.</p><a class="textlink" href="#ergebnisse" data-topic="lego">LEGO-Ideen ansehen →</a></article>
-<article class="trend-card"><span class="micro">Hören statt Bildschirm</span><h3>Toniebox &amp; Hörspaß</h3><p>Hörgeschichten für Kinder. Entdecke ein konkretes Toniebox-2-Starter-Set aus unserer Sammlung.</p><a class="textlink" href="#ergebnisse" data-topic="tonies">Hörspiel-Idee ansehen →</a></article>
-<article class="trend-card"><span class="micro">Analog spielen</span><h3>Bildschirmfreie Ideen</h3><p>Kugelbahnen, Knobelspiele und Brettspiele zum gemeinsamen Spielen und Entdecken.</p><a class="textlink" href="#ergebnisse" data-topic="offline">Ideen entdecken →</a></article>
-<article class="trend-card"><span class="micro">Sammeln &amp; spielen</span><h3>Pokémon-Geschenke</h3><p>Entdecke ein konkretes Pokémon-Sammelkarten-Boosterbundle. Bitte Alters- und Produkthinweise vor dem Kauf prüfen.</p><a class="textlink" href="#ergebnisse" data-topic="pokemon">Pokémon-Idee ansehen →</a></article>
+<article class="trend-card"><span class="micro">Bauen &amp; entdecken</span><h3>LEGO-Geschenke</h3><p>Für Kinder, die aus einer Handvoll Steinen lieber selbst etwas erfinden.</p><a class="textlink" href="#ergebnisse" data-topic="lego">LEGO-Ideen ansehen →</a></article>
+<article class="trend-card"><span class="micro">Hören statt Bildschirm</span><h3>Toniebox &amp; Hörspaß</h3><p>Für Kinder, die Geschichten gern noch ein zweites Mal hören.</p><a class="textlink" href="#ergebnisse" data-topic="tonies">Hörspiel-Idee ansehen →</a></article>
+<article class="trend-card"><span class="micro">Analog spielen</span><h3>Bildschirmfreie Ideen</h3><p>Kugelbahnen und Knobelspiele, bei denen die Hände beschäftigt sind – ganz ohne Bildschirm.</p><a class="textlink" href="#ergebnisse" data-topic="offline">Ideen entdecken →</a></article>
+<article class="trend-card"><span class="micro">Sammeln &amp; spielen</span><h3>Pokémon-Geschenke</h3><p>Für kleine Sammlerinnen und Sammler: ein Boosterbundle aus unserem Katalog.</p><a class="textlink" href="#ergebnisse" data-topic="pokemon">Pokémon-Idee ansehen →</a></article>
 </div></section>
-<section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><p></p></div>
-<div class="paths">
-<a class="path" href="#finder" data-focus="age"><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="budget"><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
-</div></section>
-<section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Aus der Sammlung</p><h2>Kleine Ideen. Große Freude.</h2></div><a class="textlink" href="./geschenkideen.html">Geschenkideen nach Alter &amp; Budget →</a></div>
+<section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Aus der Sammlung</p><h2>Zwei Ideen aus unserer Auswahl</h2></div><a class="textlink" href="./geschenkideen.html">Geschenkideen nach Alter &amp; Budget →</a></div>
 <div class="featured">
-<article class="gift"><div class="gift-picture"><img src="https://steinehelden.de/media/96/48/20/1782115217/10698_Bild8.jpg?ts=1782115217" alt="LEGO Classic Große Bausteine-Box 10698" loading="lazy"></div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Heute ein Haus, morgen eine Rakete: Hier darf Fantasie einfach loslegen.</p><a class="textlink" href="https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21" target="_blank" rel="noopener noreferrer sponsored">Bei Amazon ansehen (Werbung) ↗</a></div></article>
-<article class="gift"><div class="gift-picture"><img src="https://hoehenflug.com/files/productPictures/Bilder_shopOffice/Bilder_Haba/1004655001.jpg" alt="HABA Erster Obstgarten" loading="lazy"></div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Zusammen Obst sammeln, sich gegenseitig helfen und dabei ganz viel lachen.</p><a class="textlink disabled-link" href="#finder" aria-disabled="true" onclick="event.preventDefault()">Produktlink wird geprüft</a></div></article>
-<article class="gift"><div class="gift-picture"><img src="https://www.toyworld.com.au/cdn/shop/files/SNV-SG-455_5414301518587_Smart_20Games_20IQ_20Puzzler_20Pro_20_4__Toyworld.jpg?v=1743123640&amp;width=1920" alt="SmartGames IQ Puzzler Pro" loading="lazy"></div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Kleine Knobelaufgaben und das gute Gefühl, wenn plötzlich alles passt.</p><a class="textlink" href="https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21" target="_blank" rel="noopener noreferrer sponsored">Bei Amazon ansehen (Werbung) ↗</a></div></article>
+<article class="gift"><div class="gift-picture"><img src="https://steinehelden.de/media/96/48/20/1782115217/10698_Bild8.jpg?ts=1782115217" alt="LEGO Classic Große Bausteine-Box 10698" loading="lazy"></div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Ein großer Vorrat an Steinen für eigene Bauideen, ohne dass jedes Modell vorgegeben ist.</p><a class="textlink" href="https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21" target="_blank" rel="noopener noreferrer sponsored">Bei Amazon ansehen (Werbung) ↗</a></div></article>
+
+<article class="gift"><div class="gift-picture"><img src="https://www.toyworld.com.au/cdn/shop/files/SNV-SG-455_5414301518587_Smart_20Games_20IQ_20Puzzler_20Pro_20_4__Toyworld.jpg?v=1743123640&amp;width=1920" alt="SmartGames IQ Puzzler Pro" loading="lazy"></div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Kompakte Logikrätsel für unterwegs – auch dann praktisch, wenn wenig Platz ist.</p><a class="textlink" href="https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21" target="_blank" rel="noopener noreferrer sponsored">Bei Amazon ansehen (Werbung) ↗</a></div></article>
 </div></section>
-<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Alle passenden Geschenkideen</h2><div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Ideen mit direktem Amazon-Link</h2><div class="finder-tools"><div><strong>Geschenkideen aus der Sammlung</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
 <div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
-<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Bestätigte Direktlinks führen zur jeweiligen Amazon-Produktseite. Bei nicht eindeutig zugeordneten Varianten zeigen wir derzeit keinen Kauf-Link. Die mit „Werbung“ gekennzeichneten Amazon-Links sind Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
+<p class="note">Die Budgetangaben sind grobe Orientierungen, keine aktuellen Preise. Die Amazon-Produktnummern wurden recherchiert, die aktuelle Variante und Verfügbarkeit bitte vor dem Kauf prüfen. Alters- und Sicherheitshinweise des Herstellers beachten. Alle als „Werbung“ gekennzeichneten Amazon-Links sind Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
 
 </main>
-<footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Für kleine Menschen und die großen Momente dazwischen.</p></div><div class="footnav"><a href="./geschenkideen.html">Geschenkideen</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
+<footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen, passend zu Alter und Interessen.</p></div><div class="footnav"><a href="./geschenkideen.html">Geschenkideen</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
 <script src="./motion.js"></script>
 <script src="./products.js"></script>
 <script>
@@ -244,7 +265,7 @@ const el=id=>document.getElementById(id);let matches=[],shown=6,activeTopic=null
 const topicIds={lego:[0,1,29],tonies:[5],offline:[2,3,6,9,14,23],pokemon:[30]};
 function draw(){
  const age=Number(el("age").value),b=Number(el("budget").value),cat=el("interest").value;
- matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat)&&(!activeTopic||topicIds[activeTopic].includes(x.id)));
+ matches=items.filter(x=>Boolean(productDestination(x))&&(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat)&&(!activeTopic||topicIds[activeTopic].includes(x.id)));
  const root=el("results");root.replaceChildren();
  el("resultCount").textContent="("+matches.length+")";
  for(const p of matches.slice(0,shown)){
@@ -255,7 +276,7 @@ function draw(){
  const link=document.createElement("a");link.className="textlink";if(productDestination(p)){link.href=productDestination(p);link.target="_blank";link.rel="noopener noreferrer sponsored";link.textContent="Bei Amazon ansehen (Werbung) ↗";}else{link.href="#finder";link.removeAttribute("target");link.textContent="Produktlink wird geprüft";link.setAttribute("aria-disabled","true");link.classList.add("disabled-link");link.addEventListener("click",e=>e.preventDefault());}
  article.append(meta,h,desc,link);root.append(article);
  }
- if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
+ if(!matches.length){const no=document.createElement("p");no.textContent="Für diese Kombination gibt es gerade noch keinen Amazon-Direktlink. Probiere ein anderes Alter, Budget oder Interesse.";root.append(no)}
  el("more").hidden=shown>=matches.length;
  if(window.wunschweltMotion)window.wunschweltMotion.observe(root);
 }
