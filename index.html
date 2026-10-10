@@ -211,7 +211,7 @@ const raw=[
 ["BRIO Builder Konstruktionsset","bauen",3,12,80,"Bauen mit spielerischem Werkzeug."],
 ["Ravensburger 3D Puzzle Sneaker","knobeln",8,12,30,"3D-Puzzle mit praktischem Ergebnis."],
 ["Ravensburger memory Klassiker","knobeln",3,12,30,"Gemeinsam Paare suchen und merken."],
-["Ravensburger tiptoi Der Stift","forschen",2,10,80,"Basis für kompatible tiptoi-Produkte."],
+["Ravensburger tiptoi Der Stift (Modell 00801)","forschen",2,10,80,"tiptoi-Stift der Modellreihe 00801; Kompatibilität vor dem Kauf prüfen."],
 ["KOSMOS Die drei ??? Detektiv-Koffer","forschen",8,12,50,"Auf Spurensuche mit Detektivzubehör."],
 ["KOSMOS Kristalle züchten","forschen",10,12,30,"Experimentieridee unter Aufsicht."],
 ["Ravensburger KI und DU","forschen",10,12,30,"Interaktiver Einstieg in KI-Themen."],
@@ -219,7 +219,7 @@ const raw=[
 ["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."]
 ];
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
-const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21"};
+const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21"};
 const partnerTag="wunschwelt07-21";
 function productDestination(p){return verifiedProductLinks[p.id]||null}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
