@@ -28,6 +28,7 @@ label{font-size:12px;font-weight:700;display:block;margin-bottom:7px}select{widt
 @media(max-width:640px){.brand{font-size:25px}nav .navlinks{gap:12px}nav .navlinks a{font-size:12px}.hero{padding:49px 0}.aside{padding-left:17px}.filterbox,.grid,.occasion-grid{grid-template-columns:1fr}.filterbox button{grid-column:auto}.listing{padding-top:47px}.product{min-height:0}.result-head,.footer-inner{display:block}.reset{margin-top:13px}.footer-inner p{margin-top:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<link rel="stylesheet" href="./motion.css">
 </head>
 <body>
 <header><nav class="wrap" aria-label="Hauptnavigation"><a class="brand" href="./index.html">wunschwelt<span>.</span></a><div class="navlinks"><a href="./index.html#finder">Geschenkfinder</a><a href="#auswahl">Alle Ideen</a></div></nav></header>
@@ -51,6 +52,7 @@ label{font-size:12px;font-weight:700;display:block;margin-bottom:7px}select{widt
 </div></section>
 </main>
 <footer><div class="wrap footer-inner"><a class="brand" href="./index.html">wunschwelt<span>.</span></a><p>Impressum und Datenschutzerklärung müssen noch mit den tatsächlichen Betreiberangaben vervollständigt werden. Bis dahin bitte keine bezahlte Werbung schalten.</p></div></footer>
+<script src="./motion.js"></script>
 <script src="./products.js"></script>
 <script>
 (function(){
@@ -71,6 +73,7 @@ const a=document.createElement("a");a.className="shop";a.href=p.url;a.target="_b
 card.append(meta,title,desc,info,a);root.append(card);}
 if(list.length===0){const p=document.createElement("p");p.textContent="Dafür haben wir derzeit keine Geschenkidee mit Amazon-Direktlink. Probiere einen anderen Filter.";root.append(p);}
 el("count").textContent=list.length+" Geschenkideen mit Amazon-Direktlink";
+if(window.wunschweltMotion)window.wunschweltMotion.observe(root);
 }
 const f=el("giftFilters");
 f.addEventListener("submit",e=>{e.preventDefault();render();el("results").scrollIntoView({behavior:"smooth",block:"start"});});
