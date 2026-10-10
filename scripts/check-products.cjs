@@ -7,7 +7,7 @@ const ctx = vm.createContext({});
 vm.runInContext(data + "\nthis.catalog = raw; this.links = verifiedProductLinks;", ctx, { timeout: 2000 });
 const products = ctx.catalog, links = ctx.links;
 const errors = [];
-if (!Array.isArray(products) || products.length !== 30) errors.push("Expected 30 products");
+if (!Array.isArray(products) || products.length !== 31) errors.push("Expected 31 products");
 const ids = new Set();
 for (let i=0; i<products.length; i++) {
   const p=products[i];
