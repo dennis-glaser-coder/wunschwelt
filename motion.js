@@ -18,7 +18,7 @@
   function observe(root) {
     if (!canAnimate) return;
     const scope = root || document;
-    const selector = ".section-head, .trend-card, .path, .gift, .result, .product, .hero-aside, .aside, .occasion-grid > div, .help-grid > div";
+    const selector = ".section-head, .trend-card, .path, .gift, .result, .product, .hero-aside, .aside, .moment-layout h2, .moment-lines p, .occasion-grid > div, .help-grid > div";
     const targets = [];
     if (scope.matches && scope.matches(selector)) targets.push(scope);
     targets.push(...scope.querySelectorAll(selector));
@@ -28,7 +28,7 @@
       target.dataset.wwObserved = "true";
 
       const parent = target.parentElement;
-      if (parent && target.matches(".trend-card,.path,.gift,.result,.product,.occasion-grid > div,.help-grid > div")) {
+      if (parent && target.matches(".trend-card,.path,.gift,.result,.product,.moment-lines p,.occasion-grid > div,.help-grid > div")) {
         const siblings = Array.from(parent.children);
         target.style.setProperty("--ww-delay", Math.min(siblings.indexOf(target) % 4, 3) * 65 + "ms");
       }
