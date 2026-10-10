@@ -183,9 +183,9 @@ section.content{padding-top:72px}
 <p class="trend-intro">Von Bauabenteuern bis Hörgeschichten: Entdecke passende Ideen aus unserer Sammlung. Wir zeigen nur für eindeutig zugeordnete Produkte einen Amazon-Direktlink.</p>
 <div class="trend-grid">
 <article class="trend-card"><span class="micro">Bauen &amp; entdecken</span><h3>LEGO-Geschenke</h3><p>Bausteine und Bausets für verschiedene Altersgruppen – vom ersten DUPLO bis zum kreativen LEGO-Set.</p><a class="textlink" href="#ergebnisse" data-topic="lego">LEGO-Ideen ansehen →</a></article>
-<article class="trend-card"><span class="micro">Hören statt Bildschirm</span><h3>Toniebox &amp; Hörspaß</h3><p>Hörgeschichten für Kinder. Die Toniebox 2 ist bereits in unserer Sammlung; der Produktlink wird noch geprüft.</p><a class="textlink" href="#ergebnisse" data-topic="tonies">Hörspiel-Idee ansehen →</a></article>
+<article class="trend-card"><span class="micro">Hören statt Bildschirm</span><h3>Toniebox &amp; Hörspaß</h3><p>Hörgeschichten für Kinder. Entdecke ein konkretes Toniebox-2-Starter-Set aus unserer Sammlung.</p><a class="textlink" href="#ergebnisse" data-topic="tonies">Hörspiel-Idee ansehen →</a></article>
 <article class="trend-card"><span class="micro">Analog spielen</span><h3>Bildschirmfreie Ideen</h3><p>Kugelbahnen, Knobelspiele und Brettspiele zum gemeinsamen Spielen und Entdecken.</p><a class="textlink" href="#ergebnisse" data-topic="offline">Ideen entdecken →</a></article>
-<article class="trend-card trend-card--muted"><span class="micro">In Vorbereitung</span><h3>Pokémon-Geschenke</h3><p>Ein beliebtes Thema, für das wir zunächst geeignete Artikel und konkrete Amazon-Angebote prüfen. Noch keine Kaufempfehlung.</p><span class="textlink disabled-link">Produkte werden recherchiert</span></article>
+<article class="trend-card"><span class="micro">Sammeln &amp; spielen</span><h3>Pokémon-Geschenke</h3><p>Entdecke ein konkretes Pokémon-Sammelkarten-Boosterbundle. Bitte Alters- und Produkthinweise vor dem Kauf prüfen.</p><a class="textlink" href="#ergebnisse" data-topic="pokemon">Pokémon-Idee ansehen →</a></article>
 </div></section>
 <section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><p></p></div>
 <div class="paths">
@@ -214,7 +214,7 @@ const partnerTag="wunschwelt07-21";
 function productDestination(p){return verifiedProductLinks[p.id]||null}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
 const el=id=>document.getElementById(id);let matches=[],shown=6,activeTopic=null;
-const topicIds={lego:[0,1,29],tonies:[5],offline:[2,3,6,9,14,23]};
+const topicIds={lego:[0,1,29],tonies:[5],offline:[2,3,6,9,14,23],pokemon:[30]};
 function draw(){
  const age=Number(el("age").value),b=Number(el("budget").value),cat=el("interest").value;
  matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat)&&(!activeTopic||topicIds[activeTopic].includes(x.id)));
