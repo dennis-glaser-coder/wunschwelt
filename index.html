@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="wunschwelt. – passende Geschenkideen für Kinder entdecken. Einfach nach Alter, Budget und Interessen suchen.">
-<meta name="theme-color" content="#faf9f6">
+<meta name="theme-color" content="#fffaf6">
 <title>wunschwelt. – Geschenkideen, die passen</title>
 <style>
 :root{color-scheme:light;--bg:#faf9f6;--white:#fff;--ink:#252b29;--sub:#626b66;--line:#e3e5df;--green:#304c42;--soft:#f0f2ec}
@@ -60,6 +60,39 @@ footer{border-top:1px solid var(--line);padding:27px 0 35px;font-size:12px;color
 @media(max-width:760px){.hero{padding:88px 0}.entry-grid,.featured-grid,.result-grid{grid-template-columns:1fr 1fr}.filter-grid{grid-template-columns:1fr}.section{padding:60px 0}}
 @media(max-width:530px){.container{width:min(100% - 36px,1080px)}nav{min-height:72px}.logo{font-size:23px}.navlinks{gap:18px}.navlinks a{font-size:13px}.hero{padding:77px 0 83px}h1{font-size:44px}.hero p:not(.kicker){font-size:17px}.entry-grid,.featured-grid,.result-grid{grid-template-columns:1fr}.entry{min-height:126px;padding:22px}.section{padding:52px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.entry{transition:none}}
+
+/* Original warm wunschwelt palette; quieter editorial layout */
+:root{--bg:#fffaf6;--white:#fffdfb;--ink:#33241d;--sub:#76665c;--line:#efdfd5;--green:#bd765b;--soft:#fff0e6}
+body{font-family:Arial,Helvetica,sans-serif}
+.logo{font-weight:800}
+.logo::after{content:"";display:none}
+.hero{max-width:none;background:#fff0e6;padding:88px clamp(26px,6vw,78px) 94px;margin-top:32px;margin-bottom:36px;border-radius:4px}
+.hero h1{max-width:780px;font-size:clamp(42px,5.5vw,67px);letter-spacing:-.04em}
+.hero p:not(.kicker){max-width:550px}
+.button{background:#e58c6e;border-color:#e58c6e;color:#33241d}
+.button:hover,.button:focus-visible{background:#d87e5f;border-color:#d87e5f}
+.section{border-top:0;padding:64px 0}
+.section+.section{border-top:1px solid var(--line)}
+.kicker{color:#b36e56}
+.entry-grid{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.entry{background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;padding:27px 28px 21px;min-height:165px}
+.entry:last-child{border-right:0}
+.entry:hover,.entry:focus-visible{transform:none;background:#fff2e9;border-color:var(--line)}
+.entry .arrow{color:#bd765b}
+.featured-grid{gap:0;border-top:1px solid var(--line)}
+.feature{border:0;border-radius:0;background:transparent;padding:25px 27px 23px 0;min-height:196px;border-bottom:1px solid var(--line)}
+.feature+.feature{padding-left:27px}
+.feature h3{font-size:18px}
+.feature a,.result a{color:#ae674e}
+.finder{background:#fff3eb}
+.finder .container{padding-top:6px;padding-bottom:6px}
+select{border-color:#e4cfc2}
+.result{border-color:#f0dfd4;background:#fffaf7}
+.more{border-color:#bd765b;color:#ae674e}
+.more:hover{background:#ffe8db}
+:focus-visible{outline-color:#e58c6e}
+@media(max-width:760px){.hero{padding:67px 34px 72px}.entry-grid{display:block}.entry{border-right:0;border-bottom:1px solid var(--line);min-height:112px}.entry:last-child{border-bottom:0}.featured-grid{display:block}.feature,.feature+.feature{padding:23px 0;min-height:0}}
+@media(max-width:530px){.hero{margin-top:18px;padding:55px 24px 61px}.hero h1{font-size:41px}.section{padding:49px 0}.entry{padding:21px 6px}}
 </style>
 </head>
 <body>
