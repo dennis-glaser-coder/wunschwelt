@@ -85,39 +85,70 @@ footer{padding:39px 0 45px}
 @media(max-width:900px){.hero{grid-template-columns:1.1fr .9fr}.hero-copy{padding:45px 35px}.hero-media{min-height:430px}.filters{grid-template-columns:repeat(3,1fr)}.filter-button{grid-column:1/-1}.section-head,.finder-header{align-items:start}}
 @media(max-width:680px){.shell{width:calc(100% - 36px)}.nav{min-height:70px}.logo{font-size:26px}.navlinks{gap:15px}.navlinks a{font-size:12px}.hero{grid-template-columns:1fr;margin-top:15px}.hero-copy{padding:44px 28px 36px}.hero-media{min-height:240px;max-height:275px}.hero-media:before{display:none}h1{font-size:49px}.section-head,.finder-header{display:block}.section-head p,.finder-header p{margin-top:10px}.paths,.featured,.results{grid-template-columns:1fr}.path{min-height:155px;padding:22px}.gift-visual{height:100px}section.content{padding-top:55px}.finder-wrap{margin-top:55px;padding:49px 0}.filters{grid-template-columns:1fr;padding:18px}.filter-button{grid-column:auto}.foot{display:block}.footnav{margin-top:25px;flex-wrap:wrap}.result{min-height:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Editorial refinement: remove artificial decorative motifs and repeated cards. */
+.hero{display:block;min-height:0;max-width:1120px;margin-top:25px;border-radius:2px;background:#f7e9df}
+.hero-copy{padding:86px clamp(30px,8.5vw,112px) 94px;max-width:875px}
+.hero h1{max-width:740px;font-size:clamp(44px,6vw,76px);line-height:1.1}
+.hero-copy>p:not(.eyebrow){max-width:585px;font-size:17px}
+.hero-media{display:none}
+section.content{padding-top:72px}
+.section-head{margin-bottom:25px}
+.paths{gap:0;border-top:1px solid #dbc9be;border-bottom:1px solid #dbc9be}
+.path,.path:nth-child(1),.path:nth-child(2),.path:nth-child(3){background:transparent;border-radius:0;min-height:170px;border-right:1px solid #e6d5cb;padding:28px 25px 18px;transition:background .15s}
+.path:last-child{border-right:0}
+.path:hover{transform:none;background:#fbf0e9}
+.path strong{font-size:26px}
+.path small{margin-top:8px}
+.path .arr{background:none;font-size:22px;width:auto;height:auto}
+.featured{gap:0;border-top:1px solid var(--line)}
+.gift{background:transparent;border:0;border-radius:0;border-right:1px solid var(--line);padding:0;min-height:235px}
+.gift:last-child{border-right:0}
+.gift-body{padding:24px 25px 24px 0}
+.gift:not(:first-child) .gift-body{padding-left:25px}
+.gift h3{font-size:23px;margin-top:12px}
+.gift p{font-size:14px}
+.finder-wrap{margin-top:72px;padding:65px 0;background:#f8eee7}
+.filters{border-radius:3px;background:#fffaf6}
+.results{gap:0;border-top:1px solid #e6d1c5}
+.result{border:0;border-radius:0;background:transparent;border-bottom:1px solid #e6d1c5;min-height:208px;padding:22px 19px 22px 0}
+.result:nth-child(3n+2),.result:nth-child(3n+3){padding-left:19px}
+.result h3{font-size:20px}
+.button{border-radius:5px}
+.more{border-radius:5px}
+@media(max-width:680px){.hero-copy{padding:53px 25px 58px}.hero h1{font-size:47px}.paths{display:block}.path,.path:nth-child(1),.path:nth-child(2),.path:nth-child(3){border-right:0;border-bottom:1px solid var(--line);min-height:130px;padding:21px 8px}.path:last-child{border:0}.featured{display:block}.gift{border-right:0;border-bottom:1px solid var(--line);min-height:0}.gift-body,.gift:not(:first-child) .gift-body{padding:22px 0}.results{display:block}.result,.result:nth-child(3n+2),.result:nth-child(3n+3){padding:21px 0;min-height:0}.finder-wrap{margin-top:52px}}
 </style>
 </head>
 <body>
 <header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
 <main>
 <section class="shell hero" id="start" aria-labelledby="main-title">
-<div class="hero-copy"><p class="eyebrow">Geschenkideen für Kinder</p><h1 id="main-title">Geschenke finden, die wirklich Freude machen.</h1><p>Entdecke passende Geschenkideen nach Alter, Budget und Interessen – in Ruhe und ohne endloses Suchen.</p><a class="button" href="#finder">Zum Geschenkfinder <span aria-hidden="true">→</span></a></div>
-<div class="hero-media"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=1050&amp;q=85" alt="Liebevoll ausgesuchtes Spielzeug für Kinder" loading="eager"></div>
+<div class="hero-copy"><p class="eyebrow">Geschenkideen für Kinder</p><h1 id="main-title">Ein Geschenk, das zu diesem Kind passt.</h1><p>Wie alt ist das Kind, was beschäftigt es gerade – und wie viel möchtest du ausgeben? Hier findest du einen guten Anfang.</p><a class="button" href="#finder">Zum Geschenkfinder <span aria-hidden="true">→</span></a></div>
 </section>
-<section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Ganz einfach starten</p><h2>So kannst du stöbern</h2></div><p>Finde die passende Idee auf dem Weg, der für dich am einfachsten ist.</p></div>
+<section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><p></p></div>
 <div class="paths">
-<a class="path" href="#finder" data-focus="age"><span class="path-icon" aria-hidden="true">◌</span><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="budget"><span class="path-icon" aria-hidden="true">€</span><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="interest"><span class="path-icon" aria-hidden="true">✳</span><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="path" href="#finder" data-focus="age"><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="path" href="#finder" data-focus="budget"><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
 </div></section>
-<section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Kleine Vorauswahl</p><h2>Drei schöne Ideen zum Einstieg</h2></div><a class="textlink" href="#finder">Weitere Ideen entdecken →</a></div>
+<section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Aus der Sammlung</p><h2>Drei Ideen, die wir mögen</h2></div><a class="textlink" href="#finder">Weitere Ideen entdecken →</a></div>
 <div class="featured">
-<article class="gift"><div class="gift-visual" aria-hidden="true">▧</div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Einfach drauflos bauen und kreativ werden.</p><a class="textlink" href="#finder" data-pick="0">Im Finder ansehen →</a></div></article>
-<article class="gift"><div class="gift-visual" aria-hidden="true">● ◒ ●</div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Zusammen spielen statt gegeneinander.</p><a class="textlink" href="#finder" data-pick="9">Im Finder ansehen →</a></div></article>
-<article class="gift"><div class="gift-visual" aria-hidden="true">◇</div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Knifflige Aufgaben für kleine Denkpausen.</p><a class="textlink" href="#finder" data-pick="6">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Viele Steine, keine feste Anleitung: gut für eigene Bauideen.</p><a class="textlink" href="#finder" data-pick="0">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein erstes gemeinsames Brettspiel mit einfachen Regeln.</p><a class="textlink" href="#finder" data-pick="9">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Ein kompaktes Logikspiel für unterwegs.</p><a class="textlink" href="#finder" data-pick="6">Im Finder ansehen →</a></div></article>
 </div></section>
-<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Finde etwas Passendes</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Drei Angaben reichen. Du kannst jederzeit neu auswählen.</p></div>
+<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Filtere die Sammlung nach Alter, Budget und Interessen.</p></div>
 <form class="filters" id="filterForm">
 <div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
 <div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
 <div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
-<button class="button filter-button" type="submit">Ideen finden →</button></form>
+<button class="button filter-button" type="submit">Ergebnisse ansehen →</button></form>
 <div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
 <div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
 <p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Amazon-Suchlinks sind derzeit keine Affiliate-Links.</p>
 </div></section>
 </main>
-<footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Mit Liebe das Passende finden.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
+<footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
 <script>
 const raw=[
 ["LEGO Classic Große Bausteine-Box 10698","bauen",4,12,50,"Offenes Bauen mit vielen unterschiedlichen Bausteinen."],
