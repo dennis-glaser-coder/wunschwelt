@@ -1,121 +1,123 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="wunschwelt. – passende Geschenkideen für Kinder entdecken. Einfach nach Alter, Budget und Interessen suchen.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#fffaf6">
-<title>wunschwelt. – Geschenkideen, die passen</title>
+<meta name="description" content="wunschwelt. – liebevoll ausgesuchte Geschenkideen für Kinder. Finde passende Ideen nach Alter, Budget und Interessen.">
+<title>wunschwelt. | Geschenkideen für Kinder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#faf9f6;--white:#fff;--ink:#252b29;--sub:#626b66;--line:#e3e5df;--green:#304c42;--soft:#f0f2ec}
+:root{--cream:#fffaf6;--peach:#fff0e6;--peach2:#fbe3d5;--coral:#e58c6e;--dark:#402b26;--muted:#77645d;--line:#edddd3;--white:#fff;--font:'DM Sans',Arial,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--cream);color:var(--dark);font:15px/1.6 var(--font);-webkit-font-smoothing:antialiased}
 a{color:inherit}button,select{font:inherit}button{cursor:pointer}
-.container{width:min(1080px,calc(100% - 48px));margin:auto}
-header{border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:24px}
-.logo{font-size:25px;font-weight:750;letter-spacing:-1.2px;text-decoration:none}
+.shell{width:min(1120px,calc(100% - 56px));margin:0 auto}
+header{background:rgba(255,250,246,.96);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:'DM Serif Display',Georgia,serif;font-size:31px;letter-spacing:-.035em;text-decoration:none;color:#753927;white-space:nowrap}
+.logo span{color:var(--coral)}
 .navlinks{display:flex;align-items:center;gap:32px}
-.navlinks a{font-size:14px;text-decoration:none;color:var(--sub)}
-.navlinks a:hover,.navlinks a:focus-visible{color:var(--green);text-decoration:underline;text-underline-offset:5px}
-.hero{max-width:800px;padding:116px 0 112px}
-.kicker{font-size:12px;color:var(--green);font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin:0 0 22px}
-h1,h2,h3{line-height:1.18;letter-spacing:-.035em}
-h1{font-size:clamp(43px,6.2vw,75px);font-weight:650;margin:0 0 24px}
-.hero p:not(.kicker){font-size:19px;color:var(--sub);max-width:570px;margin:0 0 34px}
-.button{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;text-decoration:none;border:1px solid var(--green);border-radius:5px;padding:13px 22px;font-weight:600;font-size:14px;min-height:48px}
-.button:hover,.button:focus-visible{background:#233a32}
-.section{padding:76px 0;border-top:1px solid var(--line)}
-.section-head{margin-bottom:29px}
-.section h2{font-size:clamp(29px,3.2vw,40px);margin:0 0 11px;font-weight:650}
-.section-head p{margin:0;color:var(--sub);max-width:610px}
-.entry-grid,.featured-grid,.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.entry{display:flex;flex-direction:column;justify-content:space-between;min-height:170px;padding:27px;background:var(--white);border:1px solid var(--line);text-decoration:none;border-radius:6px;transition:border-color .15s,transform .15s}
-.entry:hover,.entry:focus-visible{border-color:var(--green);transform:translateY(-2px)}
-.entry strong{font-size:22px;font-weight:600;letter-spacing:-.02em}
-.entry span{font-size:14px;color:var(--sub)}
-.entry .arrow{align-self:flex-end;color:var(--green);font-size:22px}
-.feature{padding:27px;border:1px solid var(--line);border-radius:6px;background:var(--white);min-height:220px;display:flex;flex-direction:column}
-.feature .meta,.result .meta{color:var(--sub);font-size:12px}
-.feature h3,.result h3{font-size:19px;margin:17px 0 11px;font-weight:650}
-.feature p,.result p{margin:0;color:var(--sub);font-size:14px}
-.feature a,.result a{font-size:13px;font-weight:700;color:var(--green);text-underline-offset:4px;margin-top:auto;padding-top:22px}
-.finder{scroll-margin-top:24px}
-.filter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:29px 0 20px}
-label{font-size:13px;font-weight:650;display:block;margin-bottom:8px}
-select{width:100%;padding:13px 12px;background:var(--white);color:var(--ink);border:1px solid #cdd3cc;border-radius:5px;min-height:48px}
-.results-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:31px 0 17px}
-.results-head h3{font-size:20px;margin:0}
-.count{font-size:13px;color:var(--sub)}
-.result{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:23px;display:flex;flex-direction:column;min-height:205px}
-.result h3{font-size:17px;margin:12px 0}
-.more{display:block;margin:25px auto 0;padding:11px 22px;background:transparent;border:1px solid var(--green);border-radius:5px;color:var(--green);font-weight:650}
-.more:hover{background:var(--soft)}
-.note{font-size:12px;color:var(--sub);margin:27px 0 0;max-width:770px}
-footer{border-top:1px solid var(--line);padding:27px 0 35px;font-size:12px;color:var(--sub)}
-.footer-row{display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
-:focus-visible{outline:3px solid #96b2a4;outline-offset:3px}
+.navlinks a{text-decoration:none;font-size:13px;font-weight:600;color:#594a43}
+.navlinks a:hover{color:#ba6550}
+h1,h2,h3,p{margin-top:0}
+h1,h2,.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-.025em}
+h1{font-size:clamp(46px,5.9vw,73px);line-height:1.065;margin-bottom:24px}
+h2{font-size:clamp(31px,3.4vw,43px);line-height:1.18;margin-bottom:12px}
+h3{font-size:19px;line-height:1.3}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:#b66d52}
+.hero{display:grid;grid-template-columns:1.04fr .96fr;background:var(--peach);min-height:505px;margin-top:27px;overflow:hidden;border-radius:9px}
+.hero-copy{padding:clamp(40px,6vw,78px) clamp(32px,5.5vw,68px);align-self:center}
+.hero-copy>p:not(.eyebrow){max-width:450px;color:#69574e;font-size:16px;line-height:1.75;margin-bottom:26px}
+.hero-media{min-height:460px;position:relative;background:#e9d5c4}
+.hero-media img{height:100%;width:100%;object-fit:cover;display:block}
+.hero-media:before{content:"";position:absolute;z-index:1;inset:0 auto 0 0;width:35%;background:linear-gradient(90deg,var(--peach),transparent)}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:15px;text-decoration:none;background:var(--coral);border:1px solid var(--coral);color:#fff;padding:13px 23px;min-height:48px;border-radius:28px;font-size:14px;font-weight:700;transition:background .15s}
+.button:hover{background:#ce755b;border-color:#ce755b}
+section.content{padding:76px 0 12px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:27px}
+.section-head p{color:var(--muted);max-width:390px;margin-bottom:4px}
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.path{min-height:225px;padding:27px;text-decoration:none;border-radius:10px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;transition:transform .2s}
+.path:hover{transform:translateY(-3px)}
+.path:nth-child(1){background:#fce4d8}.path:nth-child(2){background:#fae9d5}.path:nth-child(3){background:#eee8d9}
+.path-icon{font-size:28px;line-height:1}
+.path strong{font-family:'DM Serif Display',Georgia,serif;font-size:26px;font-weight:400}
+.path small{display:block;color:#705f55;font-size:13px;max-width:220px}
+.path .arr{align-self:flex-end;border-radius:50%;background:rgba(255,255,255,.7);width:34px;height:34px;display:grid;place-items:center;font-size:19px}
+.featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.gift{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
+.gift-visual{height:125px;display:flex;align-items:center;justify-content:center;background:#fff2e8;font-size:45px}
+.gift:nth-child(2) .gift-visual{background:#f8eadc}.gift:nth-child(3) .gift-visual{background:#f2ece2}
+.gift-body{padding:21px 23px;display:flex;flex-direction:column;flex:1}
+.micro{font-size:12px;color:#9b7968;font-weight:600}
+.gift h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:10px 0;font-size:23px}
+.gift p{font-size:13px;color:var(--muted);margin-bottom:18px}
+.textlink{font-size:13px;color:#b46650;font-weight:700;text-decoration:none;margin-top:auto}
+.textlink:hover{text-decoration:underline;text-underline-offset:4px}
+.finder-wrap{background:#fff0e6;margin-top:76px;padding:66px 0 72px}
+.finder-header{display:flex;align-items:end;justify-content:space-between;gap:28px}
+.finder-header p{max-width:390px;color:var(--muted)}
+.filters{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:14px;align-items:end;background:#fffaf7;border:1px solid #f2ddd0;padding:22px;border-radius:11px;margin:25px 0 20px}
+.field label{display:block;font-size:12px;font-weight:700;margin-bottom:7px}
+.field select{width:100%;border:1px solid #e7d4c9;background:#fff;min-height:47px;padding:11px 10px;border-radius:6px;color:var(--dark)}
+.filter-button{white-space:nowrap}
+.finder-tools{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:22px 0 19px}
+.finder-tools strong{font-size:16px}.finder-tools span{font-size:13px;color:var(--muted)}
+.reset{border:0;padding:6px 0;color:#a85c46;text-decoration:underline;text-underline-offset:4px;background:transparent;font-size:13px}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.result{border:1px solid #edd9ce;background:#fffdfb;border-radius:9px;padding:20px;min-height:215px;display:flex;flex-direction:column}
+.result .micro{font-size:11px}
+.result h3{font-family:'DM Serif Display',Georgia,serif;font-size:20px;font-weight:400;margin:12px 0 8px}
+.result p{font-size:13px;color:var(--muted);margin-bottom:17px}
+.more{display:block;margin:26px auto 0;background:transparent;color:#a85c46;border:1px solid #d7a18d;border-radius:25px;padding:12px 25px;font-weight:700}
+.more:hover{background:#fffaf6}
+.note{color:#836b60;font-size:12px;max-width:820px;margin:27px 0 0}
+footer{padding:39px 0 45px}
+.foot{display:flex;justify-content:space-between;align-items:start;gap:30px}
+.foot p{font-size:12px;color:var(--muted);margin:6px 0 0}
+.footnav{display:flex;gap:24px;font-size:13px;color:var(--muted)}
+.footnav a{text-decoration:none}
 [hidden]{display:none!important}
-@media(max-width:760px){.hero{padding:88px 0}.entry-grid,.featured-grid,.result-grid{grid-template-columns:1fr 1fr}.filter-grid{grid-template-columns:1fr}.section{padding:60px 0}}
-@media(max-width:530px){.container{width:min(100% - 36px,1080px)}nav{min-height:72px}.logo{font-size:23px}.navlinks{gap:18px}.navlinks a{font-size:13px}.hero{padding:77px 0 83px}h1{font-size:44px}.hero p:not(.kicker){font-size:17px}.entry-grid,.featured-grid,.result-grid{grid-template-columns:1fr}.entry{min-height:126px;padding:22px}.section{padding:52px 0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.entry{transition:none}}
-
-/* Original warm wunschwelt palette; quieter editorial layout */
-:root{--bg:#fffaf6;--white:#fffdfb;--ink:#33241d;--sub:#76665c;--line:#efdfd5;--green:#bd765b;--soft:#fff0e6}
-body{font-family:Arial,Helvetica,sans-serif}
-.logo{font-weight:800}
-.logo::after{content:"";display:none}
-.hero{max-width:none;background:#fff0e6;padding:88px clamp(26px,6vw,78px) 94px;margin-top:32px;margin-bottom:36px;border-radius:4px}
-.hero h1{max-width:780px;font-size:clamp(42px,5.5vw,67px);letter-spacing:-.04em}
-.hero p:not(.kicker){max-width:550px}
-.button{background:#e58c6e;border-color:#e58c6e;color:#33241d}
-.button:hover,.button:focus-visible{background:#d87e5f;border-color:#d87e5f}
-.section{border-top:0;padding:64px 0}
-.section+.section{border-top:1px solid var(--line)}
-.kicker{color:#b36e56}
-.entry-grid{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.entry{background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;padding:27px 28px 21px;min-height:165px}
-.entry:last-child{border-right:0}
-.entry:hover,.entry:focus-visible{transform:none;background:#fff2e9;border-color:var(--line)}
-.entry .arrow{color:#bd765b}
-.featured-grid{gap:0;border-top:1px solid var(--line)}
-.feature{border:0;border-radius:0;background:transparent;padding:25px 27px 23px 0;min-height:196px;border-bottom:1px solid var(--line)}
-.feature+.feature{padding-left:27px}
-.feature h3{font-size:18px}
-.feature a,.result a{color:#ae674e}
-.finder{background:#fff3eb}
-.finder .container{padding-top:6px;padding-bottom:6px}
-select{border-color:#e4cfc2}
-.result{border-color:#f0dfd4;background:#fffaf7}
-.more{border-color:#bd765b;color:#ae674e}
-.more:hover{background:#ffe8db}
-:focus-visible{outline-color:#e58c6e}
-@media(max-width:760px){.hero{padding:67px 34px 72px}.entry-grid{display:block}.entry{border-right:0;border-bottom:1px solid var(--line);min-height:112px}.entry:last-child{border-bottom:0}.featured-grid{display:block}.feature,.feature+.feature{padding:23px 0;min-height:0}}
-@media(max-width:530px){.hero{margin-top:18px;padding:55px 24px 61px}.hero h1{font-size:41px}.section{padding:49px 0}.entry{padding:21px 6px}}
+:focus-visible{outline:3px solid #c76b50;outline-offset:3px}
+@media(max-width:900px){.hero{grid-template-columns:1.1fr .9fr}.hero-copy{padding:45px 35px}.hero-media{min-height:430px}.filters{grid-template-columns:repeat(3,1fr)}.filter-button{grid-column:1/-1}.section-head,.finder-header{align-items:start}}
+@media(max-width:680px){.shell{width:calc(100% - 36px)}.nav{min-height:70px}.logo{font-size:26px}.navlinks{gap:15px}.navlinks a{font-size:12px}.hero{grid-template-columns:1fr;margin-top:15px}.hero-copy{padding:44px 28px 36px}.hero-media{min-height:240px;max-height:275px}.hero-media:before{display:none}h1{font-size:49px}.section-head,.finder-header{display:block}.section-head p,.finder-header p{margin-top:10px}.paths,.featured,.results{grid-template-columns:1fr}.path{min-height:155px;padding:22px}.gift-visual{height:100px}section.content{padding-top:55px}.finder-wrap{margin-top:55px;padding:49px 0}.filters{grid-template-columns:1fr;padding:18px}.filter-button{grid-column:auto}.foot{display:block}.footnav{margin-top:25px;flex-wrap:wrap}.result{min-height:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-<header><nav class="container" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt.</a><div class="navlinks"><a href="#einstiege">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
+<header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
 <main>
-<section class="container hero" id="start" aria-labelledby="hero-title"><p class="kicker">Geschenkideen für Kinder</p><h1 id="hero-title">Das passende Geschenk finden. Ganz in Ruhe.</h1><p>Weniger suchen, leichter entscheiden: Entdecke ausgewählte Geschenkideen, die zum Alter, Budget und Interesse des Kindes passen.</p><a class="button" href="#finder">Zum Geschenkfinder <span aria-hidden="true">&nbsp;→</span></a></section>
-<section class="section" id="einstiege"><div class="container"><div class="section-head"><h2>Wie möchtest du suchen?</h2><p>Drei einfache Wege zur passenden Idee.</p></div><div class="entry-grid">
-<a class="entry" href="#finder" data-focus="age"><strong>Nach Alter</strong><span>Für kleine und große Entdecker</span><span class="arrow" aria-hidden="true">↗</span></a>
-<a class="entry" href="#finder" data-focus="budget"><strong>Nach Budget</strong><span>Ideen für jeden Preisrahmen</span><span class="arrow" aria-hidden="true">↗</span></a>
-<a class="entry" href="#finder" data-focus="interest"><strong>Nach Interessen</strong><span>Was macht dem Kind Freude?</span><span class="arrow" aria-hidden="true">↗</span></a>
-</div></div></section>
-<section class="section" aria-labelledby="featured-heading"><div class="container"><div class="section-head"><h2 id="featured-heading">Drei Ideen zum Einstieg</h2><p>Eine kleine Auswahl statt endlosem Scrollen.</p></div><div class="featured-grid">
-<article class="feature"><span class="meta">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Freies Bauen und immer neue Ideen.</p><a href="#finder" data-pick="0">Im Geschenkfinder ansehen →</a></article>
-<article class="feature"><span class="meta">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein kooperatives Spiel für gemeinsame Runden.</p><a href="#finder" data-pick="9">Im Geschenkfinder ansehen →</a></article>
-<article class="feature"><span class="meta">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Kleine Denkaufgaben für zwischendurch.</p><a href="#finder" data-pick="6">Im Geschenkfinder ansehen →</a></article>
-</div></div></section>
-<section class="section finder" id="finder" aria-labelledby="finder-heading"><div class="container"><div class="section-head"><h2 id="finder-heading">Der Geschenkfinder</h2><p>Wähle aus, was dir wichtig ist. Die Vorschläge passen sich automatisch an.</p></div><div class="filter-grid">
-<div><label for="age">Alter</label><select id="age"><option value="0">Alle Altersgruppen</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
-<div><label for="budget">Budget</label><select id="budget"><option value="0">Alle Budgets</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
-<div><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
-</div><div class="results-head"><h3>Passende Ideen</h3><span class="count" id="resultCount" aria-live="polite"></span></div><div id="results" class="result-grid"></div><button id="more" class="more" type="button" hidden>Weitere Ideen anzeigen</button><p class="note">Hinweis: Budgetangaben sind grobe Orientierungen und keine Live-Preise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Externe Amazon-Suchlinks sind derzeit keine Affiliate-Links.</p></div></section>
+<section class="shell hero" id="start" aria-labelledby="main-title">
+<div class="hero-copy"><p class="eyebrow">Geschenkideen für Kinder</p><h1 id="main-title">Geschenke finden, die wirklich Freude machen.</h1><p>Entdecke passende Geschenkideen nach Alter, Budget und Interessen – in Ruhe und ohne endloses Suchen.</p><a class="button" href="#finder">Zum Geschenkfinder <span aria-hidden="true">→</span></a></div>
+<div class="hero-media"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=1050&amp;q=85" alt="Liebevoll ausgesuchtes Spielzeug für Kinder" loading="eager"></div>
+</section>
+<section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Ganz einfach starten</p><h2>So kannst du stöbern</h2></div><p>Finde die passende Idee auf dem Weg, der für dich am einfachsten ist.</p></div>
+<div class="paths">
+<a class="path" href="#finder" data-focus="age"><span class="path-icon" aria-hidden="true">◌</span><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="path" href="#finder" data-focus="budget"><span class="path-icon" aria-hidden="true">€</span><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="path" href="#finder" data-focus="interest"><span class="path-icon" aria-hidden="true">✳</span><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
+</div></section>
+<section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Kleine Vorauswahl</p><h2>Drei schöne Ideen zum Einstieg</h2></div><a class="textlink" href="#finder">Weitere Ideen entdecken →</a></div>
+<div class="featured">
+<article class="gift"><div class="gift-visual" aria-hidden="true">▧</div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Einfach drauflos bauen und kreativ werden.</p><a class="textlink" href="#finder" data-pick="0">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-visual" aria-hidden="true">● ◒ ●</div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Zusammen spielen statt gegeneinander.</p><a class="textlink" href="#finder" data-pick="9">Im Finder ansehen →</a></div></article>
+<article class="gift"><div class="gift-visual" aria-hidden="true">◇</div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Knifflige Aufgaben für kleine Denkpausen.</p><a class="textlink" href="#finder" data-pick="6">Im Finder ansehen →</a></div></article>
+</div></section>
+<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Finde etwas Passendes</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Drei Angaben reichen. Du kannst jederzeit neu auswählen.</p></div>
+<form class="filters" id="filterForm">
+<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
+<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
+<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
+<button class="button filter-button" type="submit">Ideen finden →</button></form>
+<div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
+<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Amazon-Suchlinks sind derzeit keine Affiliate-Links.</p>
+</div></section>
 </main>
-<footer><div class="container footer-row"><span>© wunschwelt. · Geschenkideen mit Bedacht.</span><span>Impressum und Datenschutzangaben vor dem kommerziellen Start ergänzen.</span></div></footer>
+<footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Mit Liebe das Passende finden.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
 <script>
 const raw=[
 ["LEGO Classic Große Bausteine-Box 10698","bauen",4,12,50,"Offenes Bauen mit vielen unterschiedlichen Bausteinen."],
@@ -151,32 +153,28 @@ const raw=[
 ];
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
-const $=id=>document.getElementById(id);
-let visible=[],shown=6;
-function render(){
- const age=Number($("age").value),budget=Number($("budget").value),interest=$("interest").value;
- visible=items.filter(p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget)&&(interest==="alle"||p.cat===interest));
- $("resultCount").textContent=visible.length+" Ideen";
- const list=visible.slice(0,shown);
- $("results").replaceChildren();
- if(!list.length){const p=document.createElement("p");p.textContent="Keine passenden Ideen. Ändere einen Filter."; $("results").append(p);}
- list.forEach(p=>{
+const el=id=>document.getElementById(id);let matches=[],shown=6;
+function draw(){
+ const age=Number(el("age").value),b=Number(el("budget").value),cat=el("interest").value;
+ matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat));
+ const root=el("results");root.replaceChildren();
+ el("resultCount").textContent="("+matches.length+")";
+ for(const p of matches.slice(0,shown)){
  const article=document.createElement("article");article.className="result";
- const meta=document.createElement("span");meta.className="meta";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · bis ca. "+p.budget+" €";
+ const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · bis ca. "+p.budget+" €";
  const h=document.createElement("h3");h.textContent=p.title;
  const desc=document.createElement("p");desc.textContent=p.description;
- const a=document.createElement("a");a.href="https://www.amazon.de/s?k="+encodeURIComponent(p.title);a.target="_blank";a.rel="noopener noreferrer sponsored";a.textContent="Auf Amazon suchen ↗";
- article.append(meta,h,desc,a);$("results").append(article);
- });
- $("more").hidden=shown>=visible.length;
+ const link=document.createElement("a");link.className="textlink";link.href="https://www.amazon.de/s?k="+encodeURIComponent(p.title);link.target="_blank";link.rel="noopener noreferrer sponsored";link.textContent="Auf Amazon suchen ↗";
+ article.append(meta,h,desc,link);root.append(article);
+ }
+ if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
+ el("more").hidden=shown>=matches.length;
 }
-["age","budget","interest"].forEach(id=>$(id).addEventListener("change",()=>{shown=6;render()}));
-$("more").addEventListener("click",()=>{shown+=6;render()});
-document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{const field=$(a.dataset.focus);setTimeout(()=>field.focus({preventScroll:true}),250)}));
-document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{
- const p=items[Number(a.dataset.pick)];$("age").value=String(p.min);$("interest").value=p.cat;$("budget").value="0";shown=6;render();
-}));
-render();
-</script>
-</body>
-</html>
+el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=6;draw();el("results").scrollIntoView({behavior:"smooth",block:"nearest"})});
+["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{shown=6;draw()}));
+el("reset").addEventListener("click",()=>{el("filterForm").reset();shown=6;draw()});
+el("more").addEventListener("click",()=>{shown+=6;draw()});
+document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{setTimeout(()=>el(a.dataset.focus).focus({preventScroll:true}),200)}));
+document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{const p=items[Number(a.dataset.pick)];el("age").value=p.min;el("budget").value="0";el("interest").value=p.cat;shown=6;draw()}));
+draw();
+</script></body></html>
