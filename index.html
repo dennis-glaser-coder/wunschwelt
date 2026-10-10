@@ -175,12 +175,12 @@ section.content{padding-top:72px}
 <section class="content shell" id="ideen"><div class="section-head"><div><p class="eyebrow">Aus der Sammlung</p><h2>Drei Ideen, die wir mögen</h2></div><a class="textlink" href="#finder">Weitere Ideen entdecken →</a></div>
 <div class="featured">
 <article class="gift"><div class="gift-picture"><img src="https://steinehelden.de/media/96/48/20/1782115217/10698_Bild8.jpg?ts=1782115217" alt="LEGO Classic Große Bausteine-Box 10698" loading="lazy"></div><div class="gift-body"><span class="micro">Bauen · ab 4 Jahren</span><h3>LEGO Classic Große Bausteine-Box</h3><p>Viele Steine, keine feste Anleitung: gut für eigene Bauideen.</p><a class="textlink" href="https://www.lego.com/de-de/product/lego-large-creative-brick-box-10698" target="_blank" rel="noopener noreferrer">Zum LEGO-Produkt ↗</a></div></article>
-<article class="gift"><div class="gift-picture"><img src="https://hoehenflug.com/files/productPictures/Bilder_shopOffice/Bilder_Haba/1004655001.jpg" alt="HABA Erster Obstgarten" loading="lazy"></div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein erstes gemeinsames Brettspiel mit einfachen Regeln.</p><a class="textlink" href="https://www.amazon.de/s?k=HABA%20Erster%20Obstgarten" target="_blank" rel="noopener noreferrer sponsored">Auf Amazon suchen ↗</a></div></article>
+<article class="gift"><div class="gift-picture"><img src="https://hoehenflug.com/files/productPictures/Bilder_shopOffice/Bilder_Haba/1004655001.jpg" alt="HABA Erster Obstgarten" loading="lazy"></div><div class="gift-body"><span class="micro">Spielen · ab 2 Jahren</span><h3>HABA Erster Obstgarten</h3><p>Ein erstes gemeinsames Brettspiel mit einfachen Regeln.</p><a class="textlink" href="https://www.amazon.de/s?k=HABA%20Erster%20Obstgarten&amp;tag=wunschwelt07-21" target="_blank" rel="noopener noreferrer sponsored">Auf Amazon suchen (Werbung) ↗</a></div></article>
 <article class="gift"><div class="gift-picture"><img src="https://www.toyworld.com.au/cdn/shop/files/SNV-SG-455_5414301518587_Smart_20Games_20IQ_20Puzzler_20Pro_20_4__Toyworld.jpg?v=1743123640&amp;width=1920" alt="SmartGames IQ Puzzler Pro" loading="lazy"></div><div class="gift-body"><span class="micro">Knobeln · ab 6 Jahren</span><h3>SmartGames IQ Puzzler Pro</h3><p>Ein kompaktes Logikspiel für unterwegs.</p><a class="textlink" href="https://www.smartgames.eu/de/spiele-f%C3%BCr-einen-spieler/iq-puzzler-pro" target="_blank" rel="noopener noreferrer">Zum Produkt ↗</a></div></article>
 </div></section>
 <section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Alle passenden Geschenkideen</h2><div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
 <div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
-<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Bestätigte Direktlinks führen zu Hersteller-Produktseiten. Bei nicht eindeutig zugeordneten Varianten wird eine Amazon-Suche geöffnet. Aktuell verwenden wir keine Affiliate-Links.</p></section>
+<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Bestätigte Direktlinks führen zu Hersteller-Produktseiten. Bei nicht eindeutig zugeordneten Varianten wird eine Amazon-Suche geöffnet. Mit * gekennzeichnete Amazon-Links sind Werbelinks. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
 
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
@@ -219,7 +219,8 @@ const raw=[
 ];
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
 const verifiedProductLinks={"0":"https://www.lego.com/de-de/product/lego-large-creative-brick-box-10698","6":"https://www.smartgames.eu/de/spiele-f%C3%BCr-einen-spieler/iq-puzzler-pro","15":"https://www.smartgames.eu/de/spiele-f%C3%BCr-einen-spieler/iq-puzzler-pro-xxl"};
-function productDestination(p){return verifiedProductLinks[p.id]||"https://www.amazon.de/s?k="+encodeURIComponent(p.title)}
+const partnerTag="wunschwelt07-21";
+function productDestination(p){return verifiedProductLinks[p.id]||"https://www.amazon.de/s?k="+encodeURIComponent(p.title)+"&tag="+encodeURIComponent(partnerTag)}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
 const el=id=>document.getElementById(id);let matches=[],shown=6;
 function draw(){
@@ -232,7 +233,7 @@ function draw(){
  const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · bis ca. "+p.budget+" €";
  const h=document.createElement("h3");h.textContent=p.title;
  const desc=document.createElement("p");desc.textContent=p.description;
- const link=document.createElement("a");link.className="textlink";link.href=productDestination(p);link.target="_blank";link.rel="noopener noreferrer";link.textContent=verifiedProductLinks[p.id]?"Zur Produktseite ↗":"Auf Amazon suchen ↗";
+ const link=document.createElement("a");link.className="textlink";link.href=productDestination(p);link.target="_blank";link.rel=verifiedProductLinks[p.id]?"noopener noreferrer":"noopener noreferrer sponsored";link.textContent=verifiedProductLinks[p.id]?"Zur Produktseite ↗":"Auf Amazon suchen (Werbung) ↗";
  article.append(meta,h,desc,link);root.append(article);
  }
  if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
