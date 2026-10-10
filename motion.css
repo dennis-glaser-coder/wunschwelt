@@ -1,0 +1,32 @@
+/* wunschwelt. / subtle editorial motion. Kept separate for both pages. */
+.ww-scroll-progress{position:fixed;inset:0 auto auto 0;width:100%;height:3px;z-index:9999;background:linear-gradient(90deg,#c5785f,#e5ae87,#a85743);transform:scaleX(0);transform-origin:left center;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+  .ww-reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--ww-delay,0ms);will-change:opacity,transform}
+  .ww-reveal.ww-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+  @keyframes ww-enter{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+  @keyframes ww-photo{from{transform:scale(1)}to{transform:scale(1.055)}}
+  .hero-copy>.eyebrow,.hero-inner>div:first-child>.eyebrow{animation:ww-enter .7s .04s backwards cubic-bezier(.22,1,.36,1)}
+  .hero-copy>h1,.hero-inner>div:first-child>h1{animation:ww-enter .85s .14s backwards cubic-bezier(.22,1,.36,1)}
+  .hero-copy>p:not(.eyebrow),.hero-inner>div:first-child>.lead{animation:ww-enter .85s .26s backwards cubic-bezier(.22,1,.36,1)}
+  .hero-copy>.button,.hero-inner>div:first-child>.chips{animation:ww-enter .8s .38s backwards cubic-bezier(.22,1,.36,1)}
+  .hero-photo{position:relative;overflow:hidden}
+  .hero-photo img{animation:ww-photo 18s ease-in-out infinite alternate;transform-origin:center}
+  .trend-card,.path,.gift,.result,.product{transition:transform .4s cubic-bezier(.2,.85,.25,1),box-shadow .4s ease,border-color .3s ease,background-color .3s ease}
+  .button,.shop,.chip{position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .3s ease,background-color .25s ease}
+  .button:after,.shop:after,.chip:after{content:"";position:absolute;top:-95%;left:-120%;height:290%;width:38%;transform:rotate(23deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.29),transparent);pointer-events:none;transition:left .7s cubic-bezier(.25,.75,.3,1)}
+  .button:hover:after,.shop:hover:after,.chip:hover:after{left:160%}
+  .textlink,.navlinks a,.links a,.navlinks .navlinks a{transition:color .2s ease}
+  .textlink:not(.disabled-link):hover{color:#92412b}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .trend-card:hover,.path:hover,.gift:hover,.result:hover,.product:hover{transform:translate3d(0,-5px,0);box-shadow:0 17px 32px rgba(85,48,34,.095)}
+  .trend-card.ww-reveal.ww-visible:hover,.path.ww-reveal.ww-visible:hover,.gift.ww-reveal.ww-visible:hover,.result.ww-reveal.ww-visible:hover,.product.ww-reveal.ww-visible:hover{transform:translate3d(0,-5px,0)}
+  .button:hover,.shop:hover,.chip:hover{transform:translate3d(0,-2px,0);box-shadow:0 9px 18px rgba(148,77,53,.14)}
+  .gift-picture img{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+  .gift:hover .gift-picture img{transform:scale(1.06)}
+}
+@media(prefers-reduced-motion:reduce){
+ .ww-scroll-progress{display:none!important}
+ .ww-reveal{opacity:1!important;transform:none!important}
+ .hero-copy>*,.hero-inner>div:first-child>*,.hero-photo img{animation:none!important}
+}
