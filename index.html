@@ -151,6 +151,17 @@ section.content{padding-top:72px}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr}.hero-copy{padding:37px}.hero-photo{min-height:350px}}
 @media(max-width:680px){.hero{grid-template-columns:1fr}.hero-photo{height:235px;min-height:235px}.hero-copy{padding:40px 25px}.hero h1{font-size:43px}.results{grid-template-columns:1fr}.result,.result:nth-child(3n+2),.result:nth-child(3n+3){min-height:0}.shop-results{padding:45px 0 55px}.gift-picture{height:185px}}
 .disabled-link{color:#8f8079!important;cursor:default;text-decoration:none!important;font-weight:500!important}
+
+/* Gift themes curated from the existing catalog; no unverified product links. */
+.trend-section{padding:66px 0 16px}.trend-intro{max-width:600px;color:var(--muted)}
+.trend-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:26px}
+.trend-card{background:#fff;border:1px solid var(--line);padding:25px 22px;min-height:235px;display:flex;flex-direction:column;align-items:flex-start;border-radius:6px}
+.trend-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:25px;font-weight:400;margin:15px 0 10px}
+.trend-card p{font-size:13px;color:var(--muted);margin-bottom:21px}
+.trend-card .textlink{margin-top:auto}.trend-card .micro{color:#b66d52}
+.trend-card--muted{background:#fbf4ee}.trend-card--muted .micro{color:#78665b}
+@media(max-width:900px){.trend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.trend-section{padding:48px 0 8px}.trend-grid{grid-template-columns:1fr}.trend-card{min-height:0}}
 </style>
 </head>
 <body>
@@ -167,6 +178,15 @@ section.content{padding-top:72px}
 <section class="shell hero" id="start" aria-labelledby="main-title">
 <div class="hero-copy"><p class="eyebrow">Einfach schöne Ideen finden</p><h1 id="main-title">Schenken macht Freude. Das Richtige finden auch.</h1><p>Entdecke Geschenkideen, die zu Alter und Interessen passen – von ersten Spielen bis zu großen Bauprojekten.</p><a class="button" href="#ideen">Geschenkideen entdecken <span aria-hidden="true">→</span></a></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Buntes Spielzeug als Inspiration für Kindergeschenke" loading="eager" onerror="this.style.display=&#39;none&#39;"></div>
 </section>
+<section class="shell trend-section" id="themen" aria-labelledby="trend-title">
+<p class="eyebrow">Geschenkideen nach Thema</p><h2 id="trend-title">Was Kinder gerade begeistert</h2>
+<p class="trend-intro">Von Bauabenteuern bis Hörgeschichten: Entdecke passende Ideen aus unserer Sammlung. Wir zeigen nur für eindeutig zugeordnete Produkte einen Amazon-Direktlink.</p>
+<div class="trend-grid">
+<article class="trend-card"><span class="micro">Bauen &amp; entdecken</span><h3>LEGO-Geschenke</h3><p>Bausteine und Bausets für verschiedene Altersgruppen – vom ersten DUPLO bis zum kreativen LEGO-Set.</p><a class="textlink" href="#ergebnisse" data-topic="lego">LEGO-Ideen ansehen →</a></article>
+<article class="trend-card"><span class="micro">Hören statt Bildschirm</span><h3>Toniebox &amp; Hörspaß</h3><p>Hörgeschichten für Kinder. Die Toniebox 2 ist bereits in unserer Sammlung; der Produktlink wird noch geprüft.</p><a class="textlink" href="#ergebnisse" data-topic="tonies">Hörspiel-Idee ansehen →</a></article>
+<article class="trend-card"><span class="micro">Analog spielen</span><h3>Bildschirmfreie Ideen</h3><p>Kugelbahnen, Knobelspiele und Brettspiele zum gemeinsamen Spielen und Entdecken.</p><a class="textlink" href="#ergebnisse" data-topic="offline">Ideen entdecken →</a></article>
+<article class="trend-card trend-card--muted"><span class="micro">In Vorbereitung</span><h3>Pokémon-Geschenke</h3><p>Ein beliebtes Thema, für das wir zunächst geeignete Artikel und konkrete Amazon-Angebote prüfen. Noch keine Kaufempfehlung.</p><span class="textlink disabled-link">Produkte werden recherchiert</span></article>
+</div></section>
 <section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><p></p></div>
 <div class="paths">
 <a class="path" href="#finder" data-focus="age"><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
@@ -193,10 +213,11 @@ const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v
 const partnerTag="wunschwelt07-21";
 function productDestination(p){return verifiedProductLinks[p.id]||null}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
-const el=id=>document.getElementById(id);let matches=[],shown=6;
+const el=id=>document.getElementById(id);let matches=[],shown=6,activeTopic=null;
+const topicIds={lego:[0,1,29],tonies:[5],offline:[2,3,6,9,14,23]};
 function draw(){
  const age=Number(el("age").value),b=Number(el("budget").value),cat=el("interest").value;
- matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat));
+ matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat)&&(!activeTopic||topicIds[activeTopic].includes(x.id)));
  const root=el("results");root.replaceChildren();
  el("resultCount").textContent="("+matches.length+")";
  for(const p of matches.slice(0,shown)){
@@ -210,11 +231,12 @@ function draw(){
  if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
  el("more").hidden=shown>=matches.length;
 }
-el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=6;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"})});
-["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{shown=6;draw()}));
-el("reset").addEventListener("click",()=>{el("filterForm").reset();shown=6;draw()});
+el("filterForm").addEventListener("submit",e=>{e.preventDefault();activeTopic=null;shown=6;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"})});
+["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{activeTopic=null;shown=6;draw()}));
+el("reset").addEventListener("click",()=>{el("filterForm").reset();activeTopic=null;shown=6;draw()});
 el("more").addEventListener("click",()=>{shown+=6;draw()});
 document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{setTimeout(()=>el(a.dataset.focus).focus({preventScroll:true}),200)}));
-document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{const p=items[Number(a.dataset.pick)];el("age").value=p.min;el("budget").value="0";el("interest").value=p.cat;shown=6;draw()}));
+document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{activeTopic=null;const p=items[Number(a.dataset.pick)];el("age").value=p.min;el("budget").value="0";el("interest").value=p.cat;shown=6;draw()}));
+document.querySelectorAll("[data-topic]").forEach(a=>a.addEventListener("click",()=>{const t=a.dataset.topic;if(!topicIds[t])return;activeTopic=t;el("filterForm").reset();shown=6;draw()}));
 draw();
 </script></body></html>
