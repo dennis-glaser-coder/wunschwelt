@@ -163,6 +163,7 @@ section.content{padding-top:72px}
 @media(max-width:900px){.trend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.trend-section{padding:48px 0 8px}.trend-grid{grid-template-columns:1fr}.trend-card{min-height:0}}
 </style>
+<link rel="stylesheet" href="./motion.css">
 </head>
 <body>
 <header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="./geschenkideen.html">Geschenkideen</a><a href="#finder">Geschenkfinder</a></div></nav></header>
@@ -205,6 +206,7 @@ section.content{padding-top:72px}
 
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="./geschenkideen.html">Geschenkideen</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
+<script src="./motion.js"></script>
 <script src="./products.js"></script>
 <script>
 
@@ -230,6 +232,7 @@ function draw(){
  }
  if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
  el("more").hidden=shown>=matches.length;
+ if(window.wunschweltMotion)window.wunschweltMotion.observe(root);
 }
 el("filterForm").addEventListener("submit",e=>{e.preventDefault();activeTopic=null;shown=6;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"})});
 ["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{activeTopic=null;shown=6;draw()}));
