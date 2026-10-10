@@ -190,7 +190,7 @@ const raw=[
 ["LEGO Classic Große Bausteine-Box 10698","bauen",4,12,50,"Offenes Bauen mit vielen unterschiedlichen Bausteinen."],
 ["LEGO Creator 3-in-1 Exotischer Papagei 31136","bauen",7,12,30,"Drei alternative Tiermodelle aus einem Set."],
 ["Ravensburger GraviTrax Starter-Set","bauen",8,12,80,"Kugelbahnen bauen und immer wieder verändern."],
-["GraviTrax Junior Starter-Set","bauen",3,7,30,"Kugelbahnsystem für jüngere Kinder."],
+["Ravensburger GraviTrax Junior Starter-Set S Desert 24585","bauen",3,7,30,"Ein kleines Kugelbahn-Starterset mit Wüsten-Thema."],
 ["Ravensburger tiptoi Starter-Set Meine Welt","forschen",2,5,80,"Interaktives Buch und Stift für erste Entdeckungen."],
 ["Toniebox 2","knobeln",1,12,150,"Hörgeschichten ohne klassisches Display."],
 ["SmartGames IQ Puzzler Pro","knobeln",6,12,30,"Kompakte Logikaufgaben für unterwegs."],
@@ -219,7 +219,7 @@ const raw=[
 ["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."]
 ];
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
-const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21"};
+const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21"};
 const partnerTag="wunschwelt07-21";
 function productDestination(p){return verifiedProductLinks[p.id]||null}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
