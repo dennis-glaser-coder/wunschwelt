@@ -176,6 +176,15 @@ section.content{padding-top:72px}
 @media(max-width:900px){.results{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.results{grid-template-columns:1fr}.result{min-height:0!important;padding:22px 20px!important}.shop-cta{min-height:65px}.empty-results{padding:24px 20px}}
 @media(prefers-reduced-motion:reduce){.shop-cta{transition:none!important}.shop-cta:hover{transform:none}}
+
+/* Relevante Alternativen, ohne Alters- oder Budgetkriterien still zu lockern. */
+.alternative-hint{grid-column:1/-1;border-left:3px solid #b67a60;background:#fff8f2;padding:17px 21px 18px;margin:2px 0 6px}
+.alternative-hint h3{font:400 22px/1.3 'DM Serif Display',Georgia,serif;margin:0 0 5px}
+.alternative-hint p{font-size:13px;color:var(--muted);margin:0 0 8px}
+.alternative-change{border:0;background:transparent;text-align:left;color:#834b3b;text-decoration:underline;text-underline-offset:4px;font-weight:700;font-size:13px;cursor:pointer;padding:7px 8px 7px 0;margin-right:12px}
+.alternative-change:hover{color:#542f24}
+.empty-results .alternative-change{display:inline-block}
+@media(max-width:680px){.alternative-hint{padding:17px 16px}}
 </style>
 </head>
 <body>
@@ -237,11 +246,17 @@ const raw=[
 ["Ravensburger KI und DU","forschen",10,12,30,"Interaktiver Einstieg in KI-Themen."],
 ["WAS IST WAS Schlau, schlauer, KI?","forschen",11,12,30,"Sachbuch zum Verständnis von KI."],
 ["LEGO DUPLO Classic Steinebox 10913 (65 Teile)","bauen",2,5,30,"65 größere Bausteine inklusive Aufbewahrungsbox – für erste eigene Bauideen."],
-["KOSMOS AllesKönnerKiste Namensbänder wickeln 604455","kreativ",8,12,30,"Freundschaftsbänder mit bunten Garnen gestalten, auch mit nachtleuchtendem Garn. Bastelset mit Anleitung."]
+["KOSMOS AllesKönnerKiste Namensbänder wickeln 604455","kreativ",8,12,30,"Freundschaftsbänder mit bunten Garnen gestalten, auch mit nachtleuchtendem Garn. Bastelset mit Anleitung."],
+["Ravensburger Colorino 20832","kreativ",2,6,30,"Große bunte Stecksteine auf Motivtafeln setzen oder frei gestalten. Ein Farb- und Kreativspiel für jüngere Kinder."],
+["Play-Doh 4er-Pack Sweet E4869ES0","kreativ",3,7,30,"Vier Dosen Knete in Pastellfarben für freie Figuren und Formen. Nur unter Aufsicht verwenden und nicht essen."],
+["HABA Fädelspiel Bauernhof-Freunde 305780","kreativ",3,7,30,"Tiermotive und Holzperlen mit zwei Schnüren auffädeln. Erst ab 3 Jahren: enthält kleine Teile und Schnüre."]
 ];
 
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
-const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","9":"https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21","16":"https://www.amazon.de/dp/B0BDMS164P?tag=wunschwelt07-21","18":"https://www.amazon.de/dp/B074VG3C2R?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21","26":"https://www.amazon.de/dp/B0DQVLM473?tag=wunschwelt07-21","29":"https://www.amazon.de/dp/B07W4KVGJM?tag=wunschwelt07-21","30":"https://www.amazon.de/dp/B08LJRZ253?tag=wunschwelt07-21"};
+// Produktzuordnungen vor Freischaltung anhand von Modellnummer/EAN gegen externe Quellen abgeglichen.
+// Neue Modelle: Colorino 20832 / EAN 4005556208326; Play-Doh E4869ES0 / EAN 5010993558988;
+// HABA Bauernhof-Freunde 305780 / EAN 4010168253275. Live-Verfügbarkeit nicht garantiert.
+const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","9":"https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21","16":"https://www.amazon.de/dp/B0BDMS164P?tag=wunschwelt07-21","18":"https://www.amazon.de/dp/B074VG3C2R?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21","26":"https://www.amazon.de/dp/B0DQVLM473?tag=wunschwelt07-21","29":"https://www.amazon.de/dp/B07W4KVGJM?tag=wunschwelt07-21","30":"https://www.amazon.de/dp/B08LJRZ253?tag=wunschwelt07-21","31":"https://www.amazon.de/dp/B08X78VF4W?tag=wunschwelt07-21","32":"https://www.amazon.de/dp/B07KRLJFVX?tag=wunschwelt07-21","33":"https://www.amazon.de/dp/B08JZ63645?tag=wunschwelt07-21"};
 const amazonProductUrl=/^https:\/\/www\.amazon\.de\/dp\/[A-Z0-9]{10}\?tag=wunschwelt07-21$/;
 function productDestination(p){const url=verifiedProductLinks[p.id];return typeof url==="string" && amazonProductUrl.test(url)?url:null;}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
@@ -264,10 +279,22 @@ function orderResults(products, age, interest) {
 function draw(){
  const age=Number(el("age").value),budget=Number(el("budget").value),interest=el("interest").value;
  const available=items.filter(p=>productDestination(p));
- matches=orderResults(available.filter(p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget)&&(interest==="alle"||p.cat===interest)),age,interest);
+ const ageAndBudget=p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget);
+ const exact=available.filter(p=>ageAndBudget(p)&&(interest==="alle"||p.cat===interest));
+ const suggestions=!exact.length&&interest!=="alle"?available.filter(p=>ageAndBudget(p)&&p.cat!==interest):[];
+ const showAlternatives=!exact.length&&suggestions.length>0;
+ matches=orderResults(showAlternatives?suggestions:exact,age,showAlternatives?"alle":interest);
  const root=el("results");root.replaceChildren();
  const count=matches.length,visible=Math.min(shown,count);
- el("resultCount").textContent=count?visible+" von "+count+" mit Amazon-Link":"keine passenden Amazon-Links";
+ el("resultCount").textContent=count?visible+" von "+count+(showAlternatives?" Alternativen":" Geschenkideen"):"noch keine direkte Empfehlung";
+ if(showAlternatives){
+  const hint=document.createElement("div");hint.className="alternative-hint";
+  const title=document.createElement("h3");title.textContent="Zu diesem Interesse ist gerade nichts Passendes dabei.";
+  const detail=document.createElement("p");detail.textContent="Diese anderen Ideen passen aber zum ausgewählten Alter und Budget.";
+  const changeInterest=document.createElement("button");changeInterest.type="button";changeInterest.className="alternative-change";changeInterest.textContent="Alle Interessen ansehen →";
+  changeInterest.addEventListener("click",()=>{el("interest").value="alle";shown=3;draw();});
+  hint.append(title,detail,changeInterest);root.append(hint);
+ }
  for(const p of matches.slice(0,shown)){
   const card=document.createElement("article");card.className="result";
   const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · Budget bis ca. "+p.budget+" €";
@@ -285,11 +312,17 @@ function draw(){
  }
  if(!matches.length){
   const empty=document.createElement("div");empty.className="empty-results";
-  const title=document.createElement("h3");title.textContent="Für diese Auswahl haben wir noch keinen passenden Direktlink.";
-  const desc=document.createElement("p");desc.textContent="Probier ein anderes Interesse oder Budget. Wir zeigen dir lieber weniger Ideen als einen Kaufbutton, der ins Leere führt.";
+  const title=document.createElement("h3");title.textContent="Dafür haben wir gerade keine Geschenkidee mit Direktlink.";
+  const desc=document.createElement("p");desc.textContent="Für das gewählte Alter und Budget finden wir derzeit nichts Passendes. Versuche andere Einstellungen – wir zeigen keine unsicheren Kaufempfehlungen.";
   const action=document.createElement("button");action.className="empty-reset";action.type="button";action.textContent="Alle Geschenkideen ansehen →";
   action.addEventListener("click",()=>{el("filterForm").reset();shown=3;draw();});
-  empty.append(title,desc,action);root.append(empty);
+  empty.append(title,desc);
+  if(budget){
+   const clearBudget=document.createElement("button");clearBudget.className="alternative-change";clearBudget.type="button";clearBudget.textContent="Anderes Budget ausprobieren →";
+   clearBudget.addEventListener("click",()=>{el("budget").value="0";shown=3;draw();});
+   empty.append(clearBudget);
+  }
+  empty.append(action);root.append(empty);
  }
  el("more").hidden=shown>=count;
 }
