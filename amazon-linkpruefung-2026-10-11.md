@@ -10,7 +10,8 @@
 - Alle 20 Produktnummern sind unterschiedlich.
 - Der Geschenkfinder nutzt ausschließlich die 20 hinterlegten direkten Produktadressen. Kaufbuttons sind mit `rel="sponsored"` versehen und als Werbung kenntlich.
 - Die 3 Ratgeberseiten enthalten zusammen 17 statische Amazon-Buttons. Alle 17 Adressen stimmen mit der zentralen Produktliste überein und sind als Werbung gekennzeichnet.
-- **Noch nicht verifiziert:** Live-HTTP-Antwort von Amazon.de, Kaufbarkeit, Bestand, Preis, korrekte deutsche Variante nach Weiterleitung sowie die tatsächliche Provisionserfassung. Amazon hat automatisierte Zugriffe hier nicht zugelassen. Die Partner-ID im URL ist vorhanden, aber das beweist keine funktionierende Kontoverknüpfung.
+- **Vom Betreiber im Browser bestätigt (1/20):** GraviTrax Junior Starter-Set S Desert 24585, ASIN `B0DDL8LLWJ`, öffnet die passende Amazon.de-Produktseite; die Partner-ID `wunschwelt07-21` steht in der ursprünglich aufgerufenen Adresse (Screenshot vom 11. Oktober 2026). Die Anzeige von Alternativartikeln sagt nichts über die Kaufbarkeit aus.
+- **Noch nicht verifiziert:** Die übrigen 19 Amazon.de-Zielseiten im Live-Browser, aktuelle Kaufbarkeit, Bestand, Preis und tatsächliche Provisionserfassung. Amazon hat automatisierte Zugriffe hier nicht zugelassen. Die Partner-ID im URL ist vorhanden, aber das beweist keine funktionierende Kontoverknüpfung.
 
 ## Direkter Funktionstest – 20 Amazon-Links
 
@@ -19,7 +20,7 @@
 | LEGO Classic Große Bausteine-Box 10698 | `B00PY3EYQO` | [Ansehen](https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21) | [Beleg](https://www.meinpreisalarm.de/preisalarm/lego-classic-10698-grosse-kreative-bausteine-box/) | Manuell offen |
 | LEGO Creator 3-in-1 Exotischer Papagei 31136 | `B0BBS2QDNN` | [Ansehen](https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21) | [Beleg](https://www.kaufland.de/product/442862618/) | Manuell offen |
 | Ravensburger GraviTrax Starter-Set | `B0BSXKTRYZ` | [Ansehen](https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21) | [Beleg](https://dl1.ravensburger.de/gpsr_compliance_support/22410.pdf) | Manuell offen |
-| Ravensburger GraviTrax Junior Starter-Set S Desert 24585 | `B0DDL8LLWJ` | [Ansehen](https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21) | [Beleg](https://dl1.ravensburger.de/gpsr_compliance_support/24585.pdf) | Manuell offen |
+| Ravensburger GraviTrax Junior Starter-Set S Desert 24585 | `B0DDL8LLWJ` | [Ansehen](https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21) | [Beleg](https://dl1.ravensburger.de/gpsr_compliance_support/24585.pdf) | **Produktseite per Screenshot bestätigt (11.10.2026); Kaufbarkeit offen** |
 | Tonies Toniebox 2 Starter-Set Meeresgrün mit Kreativ-Tonie Rot | `B0GWK8NZPY` | [Ansehen](https://www.amazon.de/dp/B0GWK8NZPY?tag=wunschwelt07-21) | [Beleg](https://www.preisgenau.de/5511969825-product) | Manuell offen |
 | SmartGames IQ Puzzler Pro | `B01G3PYWCW` | [Ansehen](https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21) | [Beleg](https://www.merchantwords.com/asin/de/B01G3PYWCW) | Manuell offen |
 | HABA Erster Obstgarten 1004655001 | `B001P4ZACS` | [Ansehen](https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21) | [Beleg](https://www.amazon.ie/HABA-4655-unterhaltsames-Holzspielzeug-Spieleklassiker/dp/B001P4ZACS) | Manuell offen |
