@@ -222,43 +222,52 @@ section.content{padding-top:72px}
 .guides-arr{font-size:22px;color:#ab6a51}
 @media(max-width:680px){.guides-strip{padding:40px 0 33px}.guides-head{display:block;margin-bottom:18px}.guides-head>p{margin-top:14px}.guides-links a{padding:15px 5px}.guides-links strong{font-size:23px}}
 </style>
+<link rel="stylesheet" href="./homepage-look.css">
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-<header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
+<header class="site-header"><nav class="shell nav" aria-label="Hauptnavigation">
+<a class="logo" href="#start">wunschwelt<span>.</span></a>
+<div class="navlinks"><a href="#finder">Geschenkfinder</a><a href="#ergebnisse">Geschenkideen</a><a href="#ratgeber">Ratgeber</a></div>
+<div class="nav-actions"><a href="#finder" aria-label="Geschenkfinder öffnen"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a><button id="showFavorites" type="button" aria-label="Gemerkte Geschenkideen anzeigen" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg></button></div>
+</nav></header>
 <main>
-<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Wie alt ist das Kind, was macht ihm Spaß und wie viel möchtest du ausgeben? Wähle einfach aus.</p></div>
-<form class="filters" id="filterForm">
-<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="1">1 Jahr</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
-<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option><option value="200">Bis ca. 200 €</option></select></div>
-<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Basteln & Rollenspiele</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option><option value="hoeren">Hören & Geschichten</option></select></div>
-<button class="button filter-button" type="submit">Geschenke finden <span aria-hidden="true">→</span></button></form>
-<div class="finder-shortcut"><span>Ein größeres Geschenk geplant?</span> <button id="premiumShortcut" class="premium-shortcut" type="button" aria-pressed="false">Größere Geschenke entdecken →</button></div>
-</div></section>
-<section class="shell hero" id="start" aria-labelledby="main-title">
+<section class="hero hero-wide" id="start" aria-labelledby="main-title">
 <div class="hero-copy"><p class="eyebrow">Einfach schöne Ideen finden</p><h1 id="main-title">Schenken macht Freude. Das Richtige finden auch.</h1><p>Entdecke Geschenkideen, die zu Alter und Interessen passen – von ersten Spielen bis zu großen Bauprojekten.</p><a class="button" href="#ergebnisse">Geschenkideen entdecken <span aria-hidden="true">→</span></a></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Buntes Spielzeug als Inspiration für Kindergeschenke" loading="eager" onerror="this.style.display=&#39;none&#39;"></div>
 </section>
-<section class="content shell" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><p></p></div>
-<div class="paths">
-<a class="path" href="#finder" data-focus="age"><div><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="budget"><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
-<a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
-</div></section>
-
-<section class="shell guides-strip" id="ratgeber" aria-labelledby="guide-heading">
-<div class="guides-head"><div><p class="eyebrow">Zum Weiterstöbern</p><h2 id="guide-heading">Schon eine Idee, wonach du suchst?</h2></div><p>Manchmal hilft ein konkretes Thema mehr als noch ein Filter. Hier findest du Geschenkideen nach Alter, Interessen oder Budget.</p></div>
-<div class="guides-links">
+<section class="finder-wrap finder-overlay" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Wie alt ist das Kind, was macht ihm Spaß und wie viel möchtest du ausgeben? Wähle einfach aus.</p></div>
+<form class="filters" id="filterForm">
+<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="1">1 Jahr</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
+<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Basteln & Rollenspiele</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option><option value="hoeren">Hören & Geschichten</option></select></div>
+<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option><option value="200">Bis ca. 200 €</option></select></div>
+<button class="button filter-button" type="submit">Geschenke finden <span aria-hidden="true">→</span></button></form>
+<div class="finder-shortcut"><span>Ein größeres Geschenk geplant?</span> <button id="premiumShortcut" class="premium-shortcut" type="button" aria-pressed="false">Größere Geschenke entdecken →</button></div>
+</div><div class="finder-trust" aria-label="Was uns wichtig ist"><span><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg> Passend zum Kind</span><span><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.45 7.1 1.05-5.1 5 .99 7-6.09-3.36-6.09 3.36.99-7-5.1-5 7.1-1.05Z"/></svg> Liebevoll ausgewählt</span><span><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10c-6 0-9-3-9-8 5 0 9 3 9 8 0-5 4-8 9-8 0 5-3 8-9 8"/><path d="M5 20h14"/></svg> Für besondere Momente</span></div></section>n>
+<section class="content shell home-categories" id="stoebern"><div class="section-head"><div><p class="eyebrow">Orientierung</p><h2>Wo möchtest du anfangen?</h2></div><a class="home-section-link" href="#ergebnisse">Alle Geschenkideen ansehen →</a></div>
+<div class="paths"><a class="path" href="#finder" data-focus="age"><span class="path-photo"><img src="https://images.unsplash.com/photo-1509676468933-c98e51205cef?auto=format&fit=crop&w=550&q=82" alt="" width="380" height="230" loading="lazy"></span><span class="path-body"><strong>Nach Alter</strong><small>Ideen für jede Entwicklungsphase.</small></span></a>
+<a class="path" href="#finder" data-focus="interest"><span class="path-photo"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=550&q=82" alt="" width="380" height="230" loading="lazy"></span><span class="path-body"><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></span></a>
+<a class="path" href="#ratgeber"><span class="path-photo"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=550&q=82" alt="" width="380" height="230" loading="lazy"></span><span class="path-body"><strong>Besondere Anlässe</strong><small>Geschenke zu Weihnachten und Geburtstagen.</small></span></a>
+<a class="path" href="#finder" data-focus="budget"><span class="path-photo"><img src="https://images.unsplash.com/photo-1638932717348-3b8f19865301?auto=format&fit=crop&w=550&q=82" alt="" width="380" height="230" loading="lazy"></span><span class="path-body"><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></span></a></div></section>
+<section class="shop-results shell home-results" id="ergebnisse" aria-labelledby="results-heading"><div class="results-top"><h2 id="results-heading">Das könnte passen.</h2><button class="home-section-link" id="showAll" type="button">Alle Geschenkideen ansehen →</button></div><p class="results-intro">Geschenkideen für deine Auswahl. Die Alters- und Budgetfilter dienen zur Orientierung; die Kaufbuttons führen als Werbelinks zu Amazon.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<div id="results" class="results" aria-live="polite"></div><button id="more" type="button" class="more" hidden>Weitere Geschenkideen anzeigen <span aria-hidden="true">→</span></button>
+<p class="note">Unsere Budgetstufen sind grobe Einordnungen, keine aktuellen Produktpreise und keine garantierten Preisobergrenzen. Die Altersspannen sind eine redaktionelle Auswahlhilfe, keine verbindlichen Herstellerempfehlungen. Bitte beim Händler den aktuellen Preis, die genaue Variante und die Verfügbarkeit sowie beim Hersteller die Alters- und Sicherheitshinweise prüfen. Die als „Werbung“ gekennzeichneten Amazon-Links sind Werbelinks. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
+<section class="shell guides-strip home-guides" id="ratgeber" aria-labelledby="guide-heading">
+<div class="home-guide-banner">
+<div class="home-guide-photo"><img src="https://images.unsplash.com/photo-1767743189702-5683fde98766?auto=format&fit=crop&w=550&q=82" alt="Weihnachtsgeschenke unter einem geschmückten Baum" width="800" height="600" loading="lazy"></div>
+<div class="home-guide-copy"><p class="eyebrow">Zum Weiterstöbern</p><h2 id="guide-heading">Schon eine Idee, wonach du suchst?</h2><p>Manchmal hilft ein konkretes Thema mehr als noch ein Filter. Hier findest du Geschenkideen nach Alter, Interessen oder Budget.</p>
+<div class="guide-highlights">
+<a href="./geschenke-fuer-3-jaehrige.html"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.45 7.1 1.05-5.1 5 .99 7-6.09-3.36-6.09 3.36.99-7-5.1-5 7.1-1.05Z"/></svg><span>Geschenke<br>für 3-Jährige</span></a>
+<a href="./geschenke-fuer-pferdefans.html"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg><span>Für kleine<br>Pferdefans</span></a>
+<a href="./besondere-geschenke-bis-200-euro.html"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7C9 4.5 6 4 2 4v14c4 0 7 .5 10 3m0-14c3-2.5 6-3 10-3v14c-4 0-7 .5-10 3m0-14v14"/></svg><span>Größere<br>Geschenkideen</span></a>
+</div><button class="guide-cta" id="showGuides" type="button" aria-expanded="false" aria-controls="guideLinks">Alle Ratgeber ansehen →</button>
+</div></div><div class="guides-head"><div><p class="eyebrow">Zum Weiterstöbern</p><h2 id="guide-heading">Schon eine Idee, wonach du suchst?</h2></div><p>Manchmal hilft ein konkretes Thema mehr als noch ein Filter. Hier findest du Geschenkideen nach Alter, Interessen oder Budget.</p></div>
+<div class="guides-links" id="guideLinks" hidden>
 <a href="./geschenke-fuer-3-jaehrige.html"><span><strong>Geschenke für 3-Jährige</strong><small>Spielen, bauen, entdecken</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
 <a href="./geschenke-fuer-pferdefans.html"><span><strong>Für kleine Pferdefans</strong><small>Schleich-Sets und Reiterhöfe</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
 <a href="./besondere-geschenke-bis-200-euro.html"><span><strong>Wenn es etwas Größeres sein darf</strong><small>Ideen für ein größeres Geschenkbudget</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
 </div>
 </section>
-
-<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Das könnte passen.</h2><p class="results-intro">Geschenkideen für deine Auswahl. Die Alters- und Budgetfilter dienen zur Orientierung; die Kaufbuttons führen als Werbelinks zu Amazon.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
-<div id="results" class="results" aria-live="polite"></div><button id="more" type="button" class="more" hidden>Weitere Geschenkideen anzeigen <span aria-hidden="true">→</span></button>
-<p class="note">Unsere Budgetstufen sind grobe Einordnungen, keine aktuellen Produktpreise und keine garantierten Preisobergrenzen. Die Altersspannen sind eine redaktionelle Auswahlhilfe, keine verbindlichen Herstellerempfehlungen. Bitte beim Händler den aktuellen Preis, die genaue Variante und die Verfügbarkeit sowie beim Hersteller die Alters- und Sicherheitshinweise prüfen. Die als „Werbung“ gekennzeichneten Amazon-Links sind Werbelinks. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
-
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz: Angaben werden ergänzt.</span></div></div></footer>
 <script>
@@ -335,7 +344,20 @@ function productIcon(cat){
 }
 
 const el=id=>document.getElementById(id);
-let matches=[],shown=3,premiumOnly=false;
+let matches=[],shown=4,premiumOnly=false;
+let favoritesOnly=false;
+const favoriteKey="wunschwelt.saved-ideas";
+let storedFavorites=[];
+try{storedFavorites=JSON.parse(localStorage.getItem(favoriteKey)||"[]");}catch(e){}
+const favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(Number.isInteger):[]);
+function persistFavorites(){try{localStorage.setItem(favoriteKey,JSON.stringify([...favorites]));}catch(e){}}
+const categoryMoodImages={
+ bauen:"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=600&q=78",
+ kreativ:"https://images.unsplash.com/photo-1638932717348-3b8f19865301?auto=format&fit=crop&w=600&q=78",
+ forschen:"https://images.unsplash.com/photo-1509676468933-c98e51205cef?auto=format&fit=crop&w=600&q=78",
+ knobeln:"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=600&q=78",
+ hoeren:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=78"
+};
 function orderResults(products, age, interest) {
   // Keep the first suggestions varied when no interest was chosen.
   if(interest!=="alle")return products.sort((a,b)=>Math.abs(a.min-age)-Math.abs(b.min-age)||a.budget-b.budget||a.id-b.id);
@@ -359,6 +381,9 @@ function draw(){
  const showAlternatives=!exact.length&&suggestions.length>0;
  matches=orderResults(showAlternatives?suggestions:exact,age,showAlternatives?"alle":interest);
  if(premiumOnly||budget>=150)matches.sort((a,b)=>b.budget-a.budget||a.min-b.min||a.id-b.id);
+ if(favoritesOnly){matches=available.filter(p=>favorites.has(p.id));}
+ el("showFavorites").setAttribute("aria-pressed",String(favoritesOnly));
+ el("showFavorites").classList.toggle("is-active",favoritesOnly);
  el("premiumShortcut").textContent=premiumOnly?"Alle Budgets ansehen":"Größere Geschenke entdecken →";
  el("premiumShortcut").setAttribute("aria-pressed",String(premiumOnly));
  const root=el("results");root.replaceChildren();
@@ -369,11 +394,19 @@ function draw(){
   const title=document.createElement("h3");title.textContent="Zu diesem Interesse ist gerade nichts Passendes dabei.";
   const detail=document.createElement("p");detail.textContent="Diese Ideen sind bei uns demselben Alters- und Budgetfilter zugeordnet. Bitte Herstellerangaben und Preise prüfen.";
   const changeInterest=document.createElement("button");changeInterest.type="button";changeInterest.className="alternative-change";changeInterest.textContent="Alle Interessen ansehen →";
-  changeInterest.addEventListener("click",()=>{el("interest").value="alle";shown=3;draw();});
+  changeInterest.addEventListener("click",()=>{el("interest").value="alle";shown=4;draw();});
   hint.append(title,detail,changeInterest);root.append(hint);
  }
  for(const p of matches.slice(0,shown)){
   const card=document.createElement("article");card.className="result";
+  const visual=document.createElement("div");visual.className="result-visual";
+  const pic=document.createElement("img");pic.src=categoryMoodImages[p.cat];pic.alt="Stimmungsbild zum Spielthema, kein Foto des angebotenen Produkts";pic.loading="lazy";pic.width=450;pic.height=300;
+  const visualLabel=document.createElement("em");visualLabel.textContent="Symbolbild";
+  const favoriteButton=document.createElement("button");favoriteButton.type="button";favoriteButton.className="favorite-toggle";favoriteButton.textContent=favorites.has(p.id)?"♥":"♡";
+  favoriteButton.setAttribute("aria-label",(favorites.has(p.id)?"Geschenkidee entfernen: ":"Geschenkidee merken: ")+p.title);
+  favoriteButton.setAttribute("aria-pressed",String(favorites.has(p.id)));
+  favoriteButton.addEventListener("click",()=>{if(favorites.has(p.id))favorites.delete(p.id);else favorites.add(p.id);persistFavorites();draw();});
+  visual.append(pic,visualLabel,favoriteButton);
   const header=document.createElement("div");header.className="result-heading";
   const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat];
   header.append(productIcon(p.cat),meta);
@@ -391,33 +424,36 @@ function draw(){
   const arrow=document.createElement("span");arrow.className="shop-cta-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
   link.append(caption,arrow);
   const disclosure=document.createElement("span");disclosure.className="shop-legal-note";disclosure.textContent="Werbung";
-  card.append(header,title,facts,desc,link,disclosure);root.append(card);
+  card.append(visual,header,title,facts,desc,link,disclosure);root.append(card);
  }
  if(!matches.length){
   const empty=document.createElement("div");empty.className="empty-results";
-  const title=document.createElement("h3");title.textContent="Dafür haben wir gerade keine Geschenkidee mit Direktlink.";
-  const desc=document.createElement("p");desc.textContent="Für das gewählte Alter und Budget finden wir derzeit nichts Passendes. Versuche andere Einstellungen – wir zeigen keine unsicheren Kaufempfehlungen.";
+  const title=document.createElement("h3");title.textContent=favoritesOnly?"Du hast noch keine Geschenkidee gemerkt.":"Dafür haben wir gerade keine Geschenkidee mit Direktlink.";
+  const desc=document.createElement("p");desc.textContent=favoritesOnly?"Tippe bei einer Geschenkidee auf das Herz, um sie für später aufzubewahren.":"Für das gewählte Alter und Budget finden wir derzeit nichts Passendes. Versuche andere Einstellungen – wir zeigen keine unsicheren Kaufempfehlungen.";
   const action=document.createElement("button");action.className="empty-reset";action.type="button";action.textContent="Alle Geschenkideen ansehen →";
-  action.addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=3;draw();});
+  action.addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=4;draw();});
   empty.append(title,desc);
   if(budget){
    const clearBudget=document.createElement("button");clearBudget.className="alternative-change";clearBudget.type="button";clearBudget.textContent="Anderes Budget ausprobieren →";
-   clearBudget.addEventListener("click",()=>{el("budget").value="0";premiumOnly=false;shown=3;draw();});
+   clearBudget.addEventListener("click",()=>{el("budget").value="0";premiumOnly=false;shown=4;draw();});
    empty.append(clearBudget);
   }
   empty.append(action);root.append(empty);
  }
  el("more").hidden=shown>=count;
 }
-el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=3;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
-["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{if(id==="budget")premiumOnly=false;shown=3;draw();}));
-el("reset").addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=3;draw();});
-el("more").addEventListener("click",()=>{shown+=3;draw();});
+el("filterForm").addEventListener("submit",e=>{e.preventDefault();favoritesOnly=false;shown=4;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
+["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{if(id==="budget")premiumOnly=false;shown=4;draw();}));
+el("reset").addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=4;draw();});
+el("more").addEventListener("click",()=>{shown+=4;draw();});
 el("premiumShortcut").addEventListener("click",()=>{
  if(premiumOnly){premiumOnly=false;el("budget").value="0";}
  else{premiumOnly=true;el("budget").value="200";}
- shown=3;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});
+ shown=4;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});
 });
+el("showFavorites").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;shown=4;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
+el("showAll").addEventListener("click",()=>{favoritesOnly=false;shown=items.length;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
+el("showGuides").addEventListener("click",()=>{const links=el("guideLinks");const open=links.hidden;links.hidden=!open;links.classList.toggle("is-open",open);el("showGuides").setAttribute("aria-expanded",String(open));if(open)links.scrollIntoView({behavior:"smooth",block:"nearest"});});
 document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{setTimeout(()=>el(a.dataset.focus).focus({preventScroll:true}),200)}));
 draw();
 </script></body></html>
