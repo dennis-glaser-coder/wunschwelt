@@ -118,3 +118,8 @@ footer{padding:19px 0 37px;background:#fffdfa;border-top:1px solid #ebe5df}
 .home-guides .guides-links.is-open a{background:#fff;box-shadow:0 1px 4px rgba(62,43,35,.03);border:1px solid #efe5da;border-radius:7px}
 .home-guides .guides-links.is-open a:hover{background:#fff8f1}
 @media(max-width:670px){.home-guides .guides-links.is-open{grid-template-columns:1fr}}
+
+
+/* Final visual alignment: image on the right, calm dark text area on the left. */
+.hero.hero-wide::before{background-image:linear-gradient(90deg,rgba(38,25,18,.8) 0%,rgba(49,32,22,.68) 30%,rgba(43,30,21,.22) 65%,rgba(36,24,18,.05) 100%),url("https://images.unsplash.com/photo-1509676468933-c98e51205cef?auto=format&fit=crop&w=1500&q=85");background-size:cover,auto 100%;background-position:center,right center;background-repeat:no-repeat;background-color:#6e4a37}
+@media(max-width:760px){.hero.hero-wide::before{background-size:cover,auto 100%;background-position:center,right center}}
