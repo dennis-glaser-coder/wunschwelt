@@ -185,6 +185,13 @@ section.content{padding-top:72px}
 .alternative-change:hover{color:#542f24}
 .empty-results .alternative-change{display:inline-block}
 @media(max-width:680px){.alternative-hint{padding:17px 16px}}
+
+/* Subtle discovery link for larger-budget gift ideas. */
+.finder-shortcut{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:13px;color:#715c50;margin:3px 2px 0}
+.premium-shortcut{font:inherit;font-weight:700;color:#874e3b;background:transparent;border:0;padding:6px 3px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.premium-shortcut:hover{color:#512e22}
+.premium-shortcut[aria-pressed="true"]{color:#402b26}
+@media(max-width:680px){.finder-shortcut{gap:3px}.premium-shortcut{padding-left:0}}
 </style>
 </head>
 <body>
@@ -192,11 +199,11 @@ section.content{padding-top:72px}
 <main>
 <section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Wie alt ist das Kind, was macht ihm Spaß und wie viel möchtest du ausgeben? Wähle einfach aus.</p></div>
 <form class="filters" id="filterForm">
-<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
-<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
-<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
+<div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="1">1 Jahr</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
+<div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option><option value="200">Bis ca. 200 €</option></select></div>
+<div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Basteln & Rollenspiele</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option><option value="hoeren">Hören & Geschichten</option></select></div>
 <button class="button filter-button" type="submit">Geschenke finden <span aria-hidden="true">→</span></button></form>
-
+<div class="finder-shortcut"><span>Ein größeres Geschenk geplant?</span> <button id="premiumShortcut" class="premium-shortcut" type="button" aria-pressed="false">Größere Geschenke entdecken →</button></div>
 </div></section>
 <section class="shell hero" id="start" aria-labelledby="main-title">
 <div class="hero-copy"><p class="eyebrow">Einfach schöne Ideen finden</p><h1 id="main-title">Schenken macht Freude. Das Richtige finden auch.</h1><p>Entdecke Geschenkideen, die zu Alter und Interessen passen – von ersten Spielen bis zu großen Bauprojekten.</p><a class="button" href="#ergebnisse">Geschenkideen entdecken <span aria-hidden="true">→</span></a></div><div class="hero-photo"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Buntes Spielzeug als Inspiration für Kindergeschenke" loading="eager" onerror="this.style.display=&#39;none&#39;"></div>
@@ -221,7 +228,7 @@ const raw=[
 ["Ravensburger GraviTrax Starter-Set","bauen",8,12,80,"Für Tüftler, die Kugelbahnen ausprobieren, neu zusammensetzen und dabei Ursache und Wirkung beobachten möchten."],
 ["Ravensburger GraviTrax Junior Starter-Set S Desert 24585","bauen",3,7,30,"Kompakte Kugelbahn für jüngere Kinder, die gerne Strecken bauen und Kugeln rollen lassen."],
 ["Ravensburger tiptoi Starter-Set Meine Welt","forschen",2,5,80,"Interaktives Buch und Stift für erste Entdeckungen."],
-["Toniebox 2","knobeln",1,12,150,"Hörgeschichten ohne klassisches Display."],
+["Tonies Toniebox 2 Starter-Set Meeresgrün mit Kreativ-Tonie Rot","hoeren",1,12,150,"Toniebox 2 mit Kreativ-Tonie für Hörgeschichten und eigene Aufnahmen. Zur ersten Einrichtung sind WLAN, App und ein mytonies-Konto erforderlich."],
 ["SmartGames IQ Puzzler Pro","knobeln",6,12,30,"Logikaufgaben im kleinen Format; eine gute Idee für Kinder, die lieber knobeln als große Spielwelten aufbauen."],
 ["KOSMOS AllesKönnerKiste Filz-Bild","kreativ",8,12,30,"Kreatives Gestalten mit Filz und Vorlagen."],
 ["Clementoni AIRO Roboter","forschen",9,12,150,"Interaktives Robotik-Spielzeug."],
@@ -249,19 +256,30 @@ const raw=[
 ["KOSMOS AllesKönnerKiste Namensbänder wickeln 604455","kreativ",8,12,30,"Freundschaftsbänder mit bunten Garnen gestalten, auch mit nachtleuchtendem Garn. Bastelset mit Anleitung."],
 ["Ravensburger Colorino 20832","kreativ",2,6,30,"Große bunte Stecksteine auf Motivtafeln setzen oder frei gestalten. Ein Farb- und Kreativspiel für jüngere Kinder."],
 ["Play-Doh 4er-Pack Sweet E4869ES0","kreativ",3,7,30,"Vier Dosen Knete in Pastellfarben für freie Figuren und Formen. Nur unter Aufsicht verwenden und nicht essen."],
-["HABA Fädelspiel Bauernhof-Freunde 305780","kreativ",3,7,30,"Tiermotive und Holzperlen mit zwei Schnüren auffädeln. Erst ab 3 Jahren: enthält kleine Teile und Schnüre."]
+["HABA Fädelspiel Bauernhof-Freunde 305780","kreativ",3,7,30,"Tiermotive und Holzperlen mit zwei Schnüren auffädeln. Erst ab 3 Jahren: enthält kleine Teile und Schnüre."],
+["LEGO City Personen-Schnellzug 60337","bauen",7,12,200,"Großes Eisenbahnset mit motorisiertem Zug, Schienen und sechs Minifiguren. Batterien sind zusätzlich nötig; vor dem Kauf die Ausstattung prüfen."],
+["PLAYMOBIL Country Großer Bauernhof 71304","kreativ",4,10,150,"Große Bauernhof-Spielwelt mit Kühen, Schweinen, Figuren und vielen Zubehörteilen für eigene Geschichten. Traktor ist separat erhältlich."],
+["Schleich HORSE CLUB Reiterhof 42567","kreativ",5,12,150,"Großer Reiterhof mit Pferdeboxen, drei Pferden und Zubehör zum Pflegen, Füttern und freien Spielen."],
+["LEGO DUPLO Interaktive Abenteuer-Eisenbahn 10427","bauen",2,5,80,"Eisenbahnset mit Zug, Schienen und Aktionssteinen zum spielerischen Erkunden. Genaue Variante beim Händler prüfen."]
 ];
 
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
 // Produktzuordnungen vor Freischaltung anhand von Modellnummer/EAN gegen externe Quellen abgeglichen.
 // Neue Modelle: Colorino 20832 / EAN 4005556208326; Play-Doh E4869ES0 / EAN 5010993558988;
 // HABA Bauernhof-Freunde 305780 / EAN 4010168253275. Live-Verfügbarkeit nicht garantiert.
-const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","9":"https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21","16":"https://www.amazon.de/dp/B0BDMS164P?tag=wunschwelt07-21","18":"https://www.amazon.de/dp/B074VG3C2R?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21","26":"https://www.amazon.de/dp/B0DQVLM473?tag=wunschwelt07-21","29":"https://www.amazon.de/dp/B07W4KVGJM?tag=wunschwelt07-21","30":"https://www.amazon.de/dp/B08LJRZ253?tag=wunschwelt07-21","31":"https://www.amazon.de/dp/B08X78VF4W?tag=wunschwelt07-21","32":"https://www.amazon.de/dp/B07KRLJFVX?tag=wunschwelt07-21","33":"https://www.amazon.de/dp/B08JZ63645?tag=wunschwelt07-21"};
+// Größere Geschenkideen, Produktnummern aus Händler-/Katalogdaten (Stand 2026-10):
+// Toniebox 2 Meeresgrün + Kreativ-Tonie Rot: 11002729 / EAN 4251192165626 / B0GWK8NZPY
+// LEGO City Personen-Schnellzug: 60337 / EAN 5702017162126 / B09QFJSNJW
+// PLAYMOBIL Großer Bauernhof: 71304 / EAN 4008789713049 / B0BT8CRKC6
+// Schleich HORSE CLUB Reiterhof: 42567 / B09QH9DTFL
+// LEGO DUPLO Interaktive Abenteuer-Eisenbahn: 10427 / EAN 5702017583822 / B0CWH4J73Z
+// ASIN-Zuordnung recherchiert, Amazon.de-Zielseite/Verfügbarkeit nicht live garantiert.
+const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","5":"https://www.amazon.de/dp/B0GWK8NZPY?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","9":"https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21","16":"https://www.amazon.de/dp/B0BDMS164P?tag=wunschwelt07-21","18":"https://www.amazon.de/dp/B074VG3C2R?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21","26":"https://www.amazon.de/dp/B0DQVLM473?tag=wunschwelt07-21","29":"https://www.amazon.de/dp/B07W4KVGJM?tag=wunschwelt07-21","30":"https://www.amazon.de/dp/B08LJRZ253?tag=wunschwelt07-21","31":"https://www.amazon.de/dp/B08X78VF4W?tag=wunschwelt07-21","32":"https://www.amazon.de/dp/B07KRLJFVX?tag=wunschwelt07-21","33":"https://www.amazon.de/dp/B08JZ63645?tag=wunschwelt07-21","34":"https://www.amazon.de/dp/B09QFJSNJW?tag=wunschwelt07-21","35":"https://www.amazon.de/dp/B0BT8CRKC6?tag=wunschwelt07-21","36":"https://www.amazon.de/dp/B09QH9DTFL?tag=wunschwelt07-21","37":"https://www.amazon.de/dp/B0CWH4J73Z?tag=wunschwelt07-21"};
 const amazonProductUrl=/^https:\/\/www\.amazon\.de\/dp\/[A-Z0-9]{10}\?tag=wunschwelt07-21$/;
 function productDestination(p){const url=verifiedProductLinks[p.id];return typeof url==="string" && amazonProductUrl.test(url)?url:null;}
-const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
+const labels={bauen:"Bauen & konstruieren",kreativ:"Basteln & Rollenspiele",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln",hoeren:"Hören & Geschichten"};
 const el=id=>document.getElementById(id);
-let matches=[],shown=3;
+let matches=[],shown=3,premiumOnly=false;
 function orderResults(products, age, interest) {
   // Keep the first suggestions varied when no interest was chosen.
   if(interest!=="alle")return products.sort((a,b)=>Math.abs(a.min-age)-Math.abs(b.min-age)||a.budget-b.budget||a.id-b.id);
@@ -279,11 +297,14 @@ function orderResults(products, age, interest) {
 function draw(){
  const age=Number(el("age").value),budget=Number(el("budget").value),interest=el("interest").value;
  const available=items.filter(p=>productDestination(p));
- const ageAndBudget=p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget);
+ const ageAndBudget=p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget)&&(!premiumOnly||p.budget>=80);
  const exact=available.filter(p=>ageAndBudget(p)&&(interest==="alle"||p.cat===interest));
  const suggestions=!exact.length&&interest!=="alle"?available.filter(p=>ageAndBudget(p)&&p.cat!==interest):[];
  const showAlternatives=!exact.length&&suggestions.length>0;
  matches=orderResults(showAlternatives?suggestions:exact,age,showAlternatives?"alle":interest);
+ if(premiumOnly||budget>=150)matches.sort((a,b)=>b.budget-a.budget||a.min-b.min||a.id-b.id);
+ el("premiumShortcut").textContent=premiumOnly?"Alle Budgets ansehen":"Größere Geschenke entdecken →";
+ el("premiumShortcut").setAttribute("aria-pressed",String(premiumOnly));
  const root=el("results");root.replaceChildren();
  const count=matches.length,visible=Math.min(shown,count);
  el("resultCount").textContent=count?visible+" von "+count+(showAlternatives?" Alternativen":" Geschenkideen"):"noch keine direkte Empfehlung";
@@ -315,11 +336,11 @@ function draw(){
   const title=document.createElement("h3");title.textContent="Dafür haben wir gerade keine Geschenkidee mit Direktlink.";
   const desc=document.createElement("p");desc.textContent="Für das gewählte Alter und Budget finden wir derzeit nichts Passendes. Versuche andere Einstellungen – wir zeigen keine unsicheren Kaufempfehlungen.";
   const action=document.createElement("button");action.className="empty-reset";action.type="button";action.textContent="Alle Geschenkideen ansehen →";
-  action.addEventListener("click",()=>{el("filterForm").reset();shown=3;draw();});
+  action.addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=3;draw();});
   empty.append(title,desc);
   if(budget){
    const clearBudget=document.createElement("button");clearBudget.className="alternative-change";clearBudget.type="button";clearBudget.textContent="Anderes Budget ausprobieren →";
-   clearBudget.addEventListener("click",()=>{el("budget").value="0";shown=3;draw();});
+   clearBudget.addEventListener("click",()=>{el("budget").value="0";premiumOnly=false;shown=3;draw();});
    empty.append(clearBudget);
   }
   empty.append(action);root.append(empty);
@@ -327,9 +348,14 @@ function draw(){
  el("more").hidden=shown>=count;
 }
 el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=3;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
-["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{shown=3;draw();}));
-el("reset").addEventListener("click",()=>{el("filterForm").reset();shown=3;draw();});
+["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{if(id==="budget")premiumOnly=false;shown=3;draw();}));
+el("reset").addEventListener("click",()=>{el("filterForm").reset();premiumOnly=false;shown=3;draw();});
 el("more").addEventListener("click",()=>{shown+=3;draw();});
+el("premiumShortcut").addEventListener("click",()=>{
+ if(premiumOnly){premiumOnly=false;el("budget").value="0";}
+ else{premiumOnly=true;el("budget").value="200";}
+ shown=3;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});
+});
 document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{setTimeout(()=>el(a.dataset.focus).focus({preventScroll:true}),200)}));
 draw();
 </script></body></html>
