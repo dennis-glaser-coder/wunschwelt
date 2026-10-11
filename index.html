@@ -151,17 +151,42 @@ section.content{padding-top:72px}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr}.hero-copy{padding:37px}.hero-photo{min-height:350px}}
 @media(max-width:680px){.hero{grid-template-columns:1fr}.hero-photo{height:235px;min-height:235px}.hero-copy{padding:40px 25px}.hero h1{font-size:43px}.results{grid-template-columns:1fr}.result,.result:nth-child(3n+2),.result:nth-child(3n+3){min-height:0}.shop-results{padding:45px 0 55px}.gift-picture{height:185px}}
 .disabled-link{color:#8f8079!important;cursor:default;text-decoration:none!important;font-weight:500!important}
+
+/* Kaufbuttons und kompakter Geschenkfinder – bestehendes Markenlayout bleibt erhalten. */
+.results-intro{font-size:14px;color:var(--muted);margin:5px 0 6px;max-width:650px}
+.finder-tools{margin:18px 0 16px;flex-wrap:wrap}
+.finder-tools strong{font-size:14px}
+.result{padding:25px 23px 21px!important;min-height:246px!important;box-shadow:0 6px 24px rgba(70,40,28,.025)}
+.result h3{font-size:clamp(20px,2vw,24px);margin:13px 0 9px;line-height:1.25}
+.result p{line-height:1.7;flex:1;margin-bottom:20px}
+.shop-cta{width:100%;min-height:67px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding:11px 14px 11px 17px;background:#51372d;color:#fff;border:1px solid #51372d;border-radius:9px;text-decoration:none;transition:background-color .18s,border-color .18s,transform .18s;box-sizing:border-box}
+.shop-cta:hover{background:#6b4738;border-color:#6b4738;transform:translateY(-1px)}
+.shop-cta:active{transform:translateY(0)}
+.shop-cta:focus-visible{outline:3px solid #c76b50;outline-offset:3px}
+.shop-cta-caption{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-width:0}
+.shop-cta-label{font-size:14px;font-weight:700;line-height:1.3;letter-spacing:.005em}
+.shop-cta-disclosure{font-size:11px;color:#ecd4c9;font-weight:500;line-height:1.25}
+.shop-cta-arrow{display:grid;place-items:center;flex:0 0 36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;font-size:19px;line-height:1}
+.empty-results{grid-column:1/-1;padding:30px 28px;background:#fffaf6;border:1px solid var(--line);border-radius:8px}
+.empty-results h3{font-family:'DM Serif Display',Georgia,serif;font-size:24px;font-weight:400;margin:0 0 8px}
+.empty-results p{color:var(--muted);font-size:14px;max-width:550px;margin:0 0 18px}
+.empty-reset{background:#51372d;color:#fff;border:1px solid #51372d;border-radius:6px;padding:12px 19px;font-weight:700}
+.empty-reset:hover{background:#6b4738}
+.more{margin-top:22px;border-color:#b68e7e;background:#fffaf6;color:#744637}
+@media(max-width:900px){.results{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.results{grid-template-columns:1fr}.result{min-height:0!important;padding:22px 20px!important}.shop-cta{min-height:65px}.empty-results{padding:24px 20px}}
+@media(prefers-reduced-motion:reduce){.shop-cta{transition:none!important}.shop-cta:hover{transform:none}}
 </style>
 </head>
 <body>
 <header><nav class="shell nav" aria-label="Hauptnavigation"><a class="logo" href="#start">wunschwelt<span>.</span></a><div class="navlinks"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a></div></nav></header>
 <main>
-<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Filtere die Sammlung nach Alter, Budget und Interessen.</p></div>
+<section class="finder-wrap" id="finder" aria-labelledby="finder-title"><div class="shell"><div class="finder-header"><div><p class="eyebrow">Nach deinen Kriterien</p><h2 id="finder-title">Der Geschenkfinder</h2></div><p>Wie alt ist das Kind, was macht ihm Spaß und wie viel möchtest du ausgeben? Wähle einfach aus.</p></div>
 <form class="filters" id="filterForm">
 <div class="field"><label for="age">Alter des Kindes</label><select id="age"><option value="0">Jedes Alter</option><option value="2">2 Jahre</option><option value="3">3 Jahre</option><option value="4">4 Jahre</option><option value="5">5 Jahre</option><option value="6">6 Jahre</option><option value="7">7 Jahre</option><option value="8">8 Jahre</option><option value="9">9 Jahre</option><option value="10">10 Jahre</option><option value="11">11 Jahre</option><option value="12">12 Jahre</option></select></div>
 <div class="field"><label for="budget">Budget</label><select id="budget"><option value="0">Jedes Budget</option><option value="30">Bis ca. 30 €</option><option value="50">Bis ca. 50 €</option><option value="80">Bis ca. 80 €</option><option value="150">Bis ca. 150 €</option></select></div>
 <div class="field"><label for="interest">Interessen</label><select id="interest"><option value="alle">Alle Interessen</option><option value="bauen">Bauen & konstruieren</option><option value="kreativ">Kreativ sein</option><option value="forschen">Entdecken & lernen</option><option value="knobeln">Spielen & knobeln</option></select></div>
-<button class="button filter-button" type="submit">Ergebnisse ansehen →</button></form>
+<button class="button filter-button" type="submit">Geschenke finden <span aria-hidden="true">→</span></button></form>
 
 </div></section>
 <section class="shell hero" id="start" aria-labelledby="main-title">
@@ -174,9 +199,9 @@ section.content{padding-top:72px}
 <a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
 </div></section>
 
-<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Alle passenden Geschenkideen</h2><div class="finder-tools"><div><strong>Passende Geschenkideen</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
-<div id="results" class="results"></div><button id="more" type="button" class="more" hidden>Weitere Ideen anzeigen</button>
-<p class="note">Die Budgetangaben sind grobe Schätzungen, keine aktuellen Produktpreise. Bitte Alters- und Sicherheitshinweise beim Hersteller prüfen. Bestätigte Direktlinks führen zur jeweiligen Amazon-Produktseite. Bei nicht eindeutig zugeordneten Varianten zeigen wir derzeit keinen Kauf-Link. Mit * gekennzeichnete Amazon-Links sind Werbelinks. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
+<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Das könnte passen.</h2><p class="results-intro">Eine kleine Auswahl statt endloser Listen. Hier siehst du nur Geschenkideen mit einem konkreten Amazon-Produktlink.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<div id="results" class="results" aria-live="polite"></div><button id="more" type="button" class="more" hidden>Weitere Geschenkideen anzeigen <span aria-hidden="true">→</span></button>
+<p class="note">Die Budgetstufen dienen nur zur Orientierung und sind keine aktuellen Produktpreise. Bitte Variante, Verfügbarkeit und die Alters- und Sicherheitshinweise beim Händler oder Hersteller prüfen. Die mit „Werbung“ bezeichneten Amazon-Links sind Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
 
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
@@ -213,33 +238,64 @@ const raw=[
 ["WAS IST WAS Schlau, schlauer, KI?","forschen",11,12,30,"Sachbuch zum Verständnis von KI."],
 ["LEGO DUPLO Bausteinbox","bauen",2,5,80,"Große Bausteine zum freien Spielen."]
 ];
+
 const items=raw.map((v,i)=>({id:i,title:v[0],cat:v[1],min:v[2],max:v[3],budget:v[4],description:v[5]}));
 const verifiedProductLinks={"0":"https://www.amazon.de/dp/B00PY3EYQO?tag=wunschwelt07-21","1":"https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21","2":"https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21","3":"https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21","6":"https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21","24":"https://www.amazon.de/dp/B07B47Y6FX?tag=wunschwelt07-21"};
-const partnerTag="wunschwelt07-21";
-function productDestination(p){return verifiedProductLinks[p.id]||null}
+const amazonProductUrl=/^https:\/\/www\.amazon\.de\/dp\/[A-Z0-9]{10}\?tag=wunschwelt07-21$/;
+function productDestination(p){const url=verifiedProductLinks[p.id];return typeof url==="string" && amazonProductUrl.test(url)?url:null;}
 const labels={bauen:"Bauen & konstruieren",kreativ:"Kreativ sein",forschen:"Entdecken & lernen",knobeln:"Spielen & knobeln"};
-const el=id=>document.getElementById(id);let matches=[],shown=6;
-function draw(){
- const age=Number(el("age").value),b=Number(el("budget").value),cat=el("interest").value;
- matches=items.filter(x=>(!age||(age>=x.min&&age<=x.max))&&(!b||x.budget<=b)&&(cat==="alle"||x.cat===cat));
- const root=el("results");root.replaceChildren();
- el("resultCount").textContent="("+matches.length+")";
- for(const p of matches.slice(0,shown)){
- const article=document.createElement("article");article.className="result";
- const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · bis ca. "+p.budget+" €";
- const h=document.createElement("h3");h.textContent=p.title;
- const desc=document.createElement("p");desc.textContent=p.description;
- const link=document.createElement("a");link.className="textlink";if(productDestination(p)){link.href=productDestination(p);link.target="_blank";link.rel="noopener noreferrer sponsored";link.textContent="Bei Amazon ansehen (Werbung) ↗";}else{link.href="#finder";link.removeAttribute("target");link.textContent="Produktlink wird geprüft";link.setAttribute("aria-disabled","true");link.classList.add("disabled-link");link.addEventListener("click",e=>e.preventDefault());}
- article.append(meta,h,desc,link);root.append(article);
- }
- if(!matches.length){const no=document.createElement("p");no.textContent="Dazu haben wir gerade keine passende Idee. Versuche einen anderen Filter.";root.append(no)}
- el("more").hidden=shown>=matches.length;
+const el=id=>document.getElementById(id);
+let matches=[],shown=3;
+function orderResults(products, age, interest) {
+  // Keep the first suggestions varied when no interest was chosen.
+  if(interest!=="alle")return products.sort((a,b)=>Math.abs(a.min-age)-Math.abs(b.min-age)||a.budget-b.budget||a.id-b.id);
+  const groups=new Map();
+  for(const product of products){
+    if(!groups.has(product.cat))groups.set(product.cat,[]);
+    groups.get(product.cat).push(product);
+  }
+  const mixed=[];
+  while([...groups.values()].some(group=>group.length)){
+    for(const group of groups.values())if(group.length)mixed.push(group.shift());
+  }
+  return mixed;
 }
-el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=6;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"})});
-["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{shown=6;draw()}));
-el("reset").addEventListener("click",()=>{el("filterForm").reset();shown=6;draw()});
-el("more").addEventListener("click",()=>{shown+=6;draw()});
+function draw(){
+ const age=Number(el("age").value),budget=Number(el("budget").value),interest=el("interest").value;
+ const available=items.filter(p=>productDestination(p));
+ matches=orderResults(available.filter(p=>(!age||(age>=p.min&&age<=p.max))&&(!budget||p.budget<=budget)&&(interest==="alle"||p.cat===interest)),age,interest);
+ const root=el("results");root.replaceChildren();
+ const count=matches.length,visible=Math.min(shown,count);
+ el("resultCount").textContent=count?visible+" von "+count+" mit Amazon-Link":"keine passenden Amazon-Links";
+ for(const p of matches.slice(0,shown)){
+  const card=document.createElement("article");card.className="result";
+  const meta=document.createElement("span");meta.className="micro";meta.textContent=labels[p.cat]+" · ab "+p.min+" Jahren · Budget bis ca. "+p.budget+" €";
+  const title=document.createElement("h3");title.textContent=p.title;
+  const desc=document.createElement("p");desc.textContent=p.description;
+  const link=document.createElement("a");link.className="shop-cta";link.href=productDestination(p);
+  link.target="_blank";link.rel="noopener noreferrer sponsored";link.setAttribute("aria-label",p.title+" bei Amazon ansehen – Werbung, Affiliate-Link");
+  const caption=document.createElement("span");caption.className="shop-cta-caption";
+  const primary=document.createElement("span");primary.className="shop-cta-label";primary.textContent="Bei Amazon ansehen";
+  const secondary=document.createElement("span");secondary.className="shop-cta-disclosure";secondary.textContent="Werbung · Affiliate-Link";
+  caption.append(primary,secondary);
+  const arrow=document.createElement("span");arrow.className="shop-cta-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
+  link.append(caption,arrow);
+  card.append(meta,title,desc,link);root.append(card);
+ }
+ if(!matches.length){
+  const empty=document.createElement("div");empty.className="empty-results";
+  const title=document.createElement("h3");title.textContent="Für diese Auswahl haben wir noch keinen passenden Direktlink.";
+  const desc=document.createElement("p");desc.textContent="Probier ein anderes Interesse oder Budget. Wir zeigen dir lieber weniger Ideen als einen Kaufbutton, der ins Leere führt.";
+  const action=document.createElement("button");action.className="empty-reset";action.type="button";action.textContent="Alle Geschenkideen ansehen →";
+  action.addEventListener("click",()=>{el("filterForm").reset();shown=3;draw();});
+  empty.append(title,desc,action);root.append(empty);
+ }
+ el("more").hidden=shown>=count;
+}
+el("filterForm").addEventListener("submit",e=>{e.preventDefault();shown=3;draw();el("ergebnisse").scrollIntoView({behavior:"smooth",block:"start"});});
+["age","budget","interest"].forEach(id=>el(id).addEventListener("change",()=>{shown=3;draw();}));
+el("reset").addEventListener("click",()=>{el("filterForm").reset();shown=3;draw();});
+el("more").addEventListener("click",()=>{shown+=3;draw();});
 document.querySelectorAll("[data-focus]").forEach(a=>a.addEventListener("click",()=>{setTimeout(()=>el(a.dataset.focus).focus({preventScroll:true}),200)}));
-document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{const p=items[Number(a.dataset.pick)];el("age").value=p.min;el("budget").value="0";el("interest").value=p.cat;shown=6;draw()}));
 draw();
 </script></body></html>
