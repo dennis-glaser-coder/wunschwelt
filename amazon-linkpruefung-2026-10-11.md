@@ -10,8 +10,8 @@
 - Alle 20 Produktnummern sind unterschiedlich.
 - Der Geschenkfinder nutzt ausschließlich die 20 hinterlegten direkten Produktadressen. Kaufbuttons sind mit `rel="sponsored"` versehen und als Werbung kenntlich.
 - Die 3 Ratgeberseiten enthalten zusammen 17 statische Amazon-Buttons. Alle 17 Adressen stimmen mit der zentralen Produktliste überein und sind als Werbung gekennzeichnet.
-- **Vom Betreiber im Browser bestätigt (1/20):** GraviTrax Junior Starter-Set S Desert 24585, ASIN `B0DDL8LLWJ`, öffnet die passende Amazon.de-Produktseite; die Partner-ID `wunschwelt07-21` steht in der ursprünglich aufgerufenen Adresse (Screenshot vom 11. Oktober 2026). Die Anzeige von Alternativartikeln sagt nichts über die Kaufbarkeit aus.
-- **Noch nicht verifiziert:** Die übrigen 19 Amazon.de-Zielseiten im Live-Browser, aktuelle Kaufbarkeit, Bestand, Preis und tatsächliche Provisionserfassung. Amazon hat automatisierte Zugriffe hier nicht zugelassen. Die Partner-ID im URL ist vorhanden, aber das beweist keine funktionierende Kontoverknüpfung.
+- **Vom Betreiber mit Screenshots bestätigt (2/20):** GraviTrax Junior Starter-Set S Desert 24585 (`B0DDL8LLWJ`) und tonies Toniebox 2 Meeresgrün Starter-Set (`B0GWK8NZPY`) öffnen die passende Amazon.de-Produktseite. In beiden Browser-Adressen steht die Partner-ID `wunschwelt07-21`. Für die Toniebox werden auf dem Screenshot vom 11.10.2026 129 € und „Auf Lager“ angezeigt, mit einem SiteStripe-Hinweis „Hoher Preis“. Die konkret enthaltene Kreativ-Tonie-Figur ist aus dem Screenshot nicht bestätigt.
+- **Noch nicht verifiziert:** Die übrigen 18 Amazon.de-Zielseiten im Live-Browser, aktuelle Kaufbarkeit und Preise außerhalb der gezeigten Momentaufnahme sowie tatsächliche Provisionserfassung. Amazon hat automatisierte Zugriffe hier nicht zugelassen. Die Partner-ID im URL ist vorhanden, aber das beweist keine funktionierende Kontoverknüpfung.
 
 ## Direkter Funktionstest – 20 Amazon-Links
 
@@ -21,7 +21,7 @@
 | LEGO Creator 3-in-1 Exotischer Papagei 31136 | `B0BBS2QDNN` | [Ansehen](https://www.amazon.de/dp/B0BBS2QDNN?tag=wunschwelt07-21) | [Beleg](https://www.kaufland.de/product/442862618/) | Manuell offen |
 | Ravensburger GraviTrax Starter-Set | `B0BSXKTRYZ` | [Ansehen](https://www.amazon.de/dp/B0BSXKTRYZ?tag=wunschwelt07-21) | [Beleg](https://dl1.ravensburger.de/gpsr_compliance_support/22410.pdf) | Manuell offen |
 | Ravensburger GraviTrax Junior Starter-Set S Desert 24585 | `B0DDL8LLWJ` | [Ansehen](https://www.amazon.de/dp/B0DDL8LLWJ?tag=wunschwelt07-21) | [Beleg](https://dl1.ravensburger.de/gpsr_compliance_support/24585.pdf) | **Produktseite per Screenshot bestätigt (11.10.2026); Kaufbarkeit offen** |
-| Tonies Toniebox 2 Starter-Set Meeresgrün mit Kreativ-Tonie Rot | `B0GWK8NZPY` | [Ansehen](https://www.amazon.de/dp/B0GWK8NZPY?tag=wunschwelt07-21) | [Beleg](https://www.preisgenau.de/5511969825-product) | Manuell offen |
+| tonies Toniebox 2 Meeresgrün Starter-Set | `B0GWK8NZPY` | [Ansehen](https://www.amazon.de/dp/B0GWK8NZPY?tag=wunschwelt07-21) | [Beleg](https://www.preisgenau.de/5511969825-product) | **Amazon.de per Screenshot bestätigt; 129 €, auf Lager (11.10.2026); Figur-Lieferumfang offen** |
 | SmartGames IQ Puzzler Pro | `B01G3PYWCW` | [Ansehen](https://www.amazon.de/dp/B01G3PYWCW?tag=wunschwelt07-21) | [Beleg](https://www.merchantwords.com/asin/de/B01G3PYWCW) | Manuell offen |
 | HABA Erster Obstgarten 1004655001 | `B001P4ZACS` | [Ansehen](https://www.amazon.de/dp/B001P4ZACS?tag=wunschwelt07-21) | [Beleg](https://www.amazon.ie/HABA-4655-unterhaltsames-Holzspielzeug-Spieleklassiker/dp/B001P4ZACS) | Manuell offen |
 | Schleich HORSE CLUB Pferdebox mit Stute und Fohlen 42611 | `B0BDMS164P` | [Ansehen](https://www.amazon.de/dp/B0BDMS164P?tag=wunschwelt07-21) | [Beleg](https://www.merchantwords.com/asin/us/B0BDMS164P) | Manuell offen |
@@ -40,7 +40,7 @@
 
 ## Wichtige Testreihenfolge
 
-1. **Toniebox 2 Meeresgrün:** Bei Amazon ist die ASIN teils als Drittanbieter-Starterset gelistet. Auf Farbe, Kreativ-Tonie, Lieferumfang und Verkäufer achten.
+1. **Toniebox 2 Meeresgrün:** Amazon.de-Seite und Momentaufnahme „Auf Lager“ bereits bestätigt. Noch **unbedingt prüfen**, ob überhaupt und welche Kreativ-Tonie-Figur im Angebot enthalten ist; SiteStripe meldet „Hoher Preis“.
 2. **Schleich Reiterhof 42567:** Besonders auf lieferbare *Einzelvariante* achten, nicht eine Kombi mit zusätzlichen Sets.
 3. **LEGO City 60337:** Ist es der ferngesteuerte Personen-Schnellzug und nicht Zubehör? Preis kann abweichen.
 4. **HABA Fädelspiel 305780:** ASIN stammt aus einer Händlerliste mit passender EAN 4010168253275, nicht aus einer direkt erreichbaren Amazon.de-Seite.
