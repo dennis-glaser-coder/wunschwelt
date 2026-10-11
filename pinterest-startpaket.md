@@ -1,6 +1,6 @@
 # Pinterest-Startpaket für wunschwelt.
 
-Status: Entwürfe für organische Pins. Noch nicht veröffentlicht. Die grafischen Motive müssen vor der Veröffentlichung mit eigenen oder korrekt lizenzierten Bildern erstellt werden.
+Status (11.10.2026): Der erste Pinterest-Pin „Was schenkt man einem Kind mit 3 Jahren?“ wurde vom Betreiber veröffentlicht. Weitere Pin-Texte sind Entwürfe; Veröffentlichung und Bildrechte je Motiv prüfen. **Achtung:** Im ersten veröffentlichten Motiv steht „bis 30 €“, die verlinkte Ratgeberseite enthält aber auch höher eingeordnete Geschenke. Diese Bildaussage vor weiterer Bewerbung korrigieren: den Pin durch eine Grafik ohne feste Preisbehauptung ersetzen. Pinterest-Grafiktext lässt sich nicht wie gewöhnlicher Text nachträglich ändern.
 
 ## Ziel
 
