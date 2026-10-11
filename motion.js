@@ -18,7 +18,7 @@
   function observe(root) {
     if (!canAnimate) return;
     const scope = root || document;
-    const selector = ".section-head, .trend-card, .gift, .result, .product, .editorial-section h2, .editorial-section>p, .aside, .occasion-grid > div";
+    const selector = ".section-head, .trend-card, .path, .gift, .result, .product, .hero-aside, .aside, .moment-layout h2, .moment-lines p, .occasion-grid > div, .help-grid > div";
     const targets = [];
     if (scope.matches && scope.matches(selector)) targets.push(scope);
     targets.push(...scope.querySelectorAll(selector));
@@ -28,9 +28,9 @@
       target.dataset.wwObserved = "true";
 
       const parent = target.parentElement;
-      if (parent && target.matches(".trend-card,.gift,.result,.product,.occasion-grid > div")) {
+      if (parent && target.matches(".trend-card,.path,.gift,.result,.product,.moment-lines p,.occasion-grid > div,.help-grid > div")) {
         const siblings = Array.from(parent.children);
-        target.style.setProperty("--ww-delay", Math.min(siblings.indexOf(target) % 3, 2) * 55 + "ms");
+        target.style.setProperty("--ww-delay", Math.min(siblings.indexOf(target) % 4, 3) * 65 + "ms");
       }
 
       const box = target.getBoundingClientRect();
@@ -49,4 +49,27 @@
   window.wunschweltMotion = { observe };
   observe(document);
 
+  if (!prefersReducedMotion) {
+    const progress = document.createElement("div");
+    progress.className = "ww-scroll-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+
+    let requested = false;
+    function updateProgress() {
+      const total = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      const fraction = total ? Math.min(1, Math.max(0, window.scrollY / total)) : 0;
+      progress.style.transform = "scaleX(" + fraction + ")";
+      requested = false;
+    }
+    function onScroll() {
+      if (!requested) {
+        requested = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    updateProgress();
+  }
 })();
