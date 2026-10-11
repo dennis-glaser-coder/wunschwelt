@@ -210,3 +210,10 @@ footer{padding:19px 0 37px;background:#fffdfa;border-top:1px solid #ebe5df}
 .freebie-link{display:inline-flex;gap:15px;align-items:center;justify-content:center;background:#815541;color:#fff;text-decoration:none;border:1px solid #815541;padding:13px 20px;border-radius:7px;font-size:13px;font-weight:700;white-space:nowrap;min-height:48px}
 .freebie-link:hover{background:#664331;border-color:#664331}
 @media(max-width:760px){.freebie-feature{flex-direction:column;align-items:stretch;padding:22px 23px;gap:18px}.freebie-link{align-self:flex-start}}
+
+
+/* Seasonal downloadable wishes alongside the existing forest colouring pages. */
+.freebie-feature.freebie-holiday{background:#f8eee8;border-color:#e8d5c9}
+.freebie-holiday .freebie-kicker{color:#a75c47}
+.freebie-holiday .freebie-link{background:#935843;border-color:#935843}
+.freebie-holiday .freebie-link:hover{background:#713f2e;border-color:#713f2e}
