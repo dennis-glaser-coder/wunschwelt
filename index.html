@@ -159,13 +159,13 @@ section.content{padding-top:72px}
 .result{padding:25px 23px 21px!important;min-height:246px!important;box-shadow:0 6px 24px rgba(70,40,28,.025)}
 .result h3{font-size:clamp(20px,2vw,24px);margin:13px 0 9px;line-height:1.25}
 .result p{line-height:1.7;flex:1;margin-bottom:20px}
-.shop-cta{width:100%;min-height:67px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding:11px 14px 11px 17px;background:#51372d;color:#fff;border:1px solid #51372d;border-radius:9px;text-decoration:none;transition:background-color .18s,border-color .18s,transform .18s;box-sizing:border-box}
+.shop-cta{width:100%;min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding:11px 14px 11px 17px;background:#51372d;color:#fff;border:1px solid #51372d;border-radius:9px;text-decoration:none;transition:background-color .18s,border-color .18s,transform .18s;box-sizing:border-box}
 .shop-cta:hover{background:#6b4738;border-color:#6b4738;transform:translateY(-1px)}
 .shop-cta:active{transform:translateY(0)}
 .shop-cta:focus-visible{outline:3px solid #c76b50;outline-offset:3px}
-.shop-cta-caption{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-width:0}
+.shop-cta-caption{display:flex;align-items:center;text-align:left;min-width:0}
 .shop-cta-label{font-size:14px;font-weight:700;line-height:1.3;letter-spacing:.005em}
-.shop-cta-disclosure{font-size:11px;color:#ecd4c9;font-weight:500;line-height:1.25}
+.shop-legal-note{display:block;margin:9px 2px 0;color:#836b60;font-size:11px;font-weight:600;line-height:1.4}
 .shop-cta-arrow{display:grid;place-items:center;flex:0 0 36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;font-size:19px;line-height:1}
 .empty-results{grid-column:1/-1;padding:30px 28px;background:#fffaf6;border:1px solid var(--line);border-radius:8px}
 .empty-results h3{font-family:'DM Serif Display',Georgia,serif;font-size:24px;font-weight:400;margin:0 0 8px}
@@ -199,9 +199,9 @@ section.content{padding-top:72px}
 <a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
 </div></section>
 
-<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Das könnte passen.</h2><p class="results-intro">Eine kleine Auswahl statt endloser Listen. Hier siehst du nur Geschenkideen mit einem konkreten Amazon-Produktlink.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
+<section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Das könnte passen.</h2><p class="results-intro">Eine kleine Auswahl statt endloser Listen. Unsere Kaufbuttons führen zu Amazon und sind Werbelinks.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
 <div id="results" class="results" aria-live="polite"></div><button id="more" type="button" class="more" hidden>Weitere Geschenkideen anzeigen <span aria-hidden="true">→</span></button>
-<p class="note">Die Budgetstufen dienen nur zur Orientierung und sind keine aktuellen Produktpreise. Bitte Variante, Verfügbarkeit und die Alters- und Sicherheitshinweise beim Händler oder Hersteller prüfen. Die mit „Werbung“ bezeichneten Amazon-Links sind Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
+<p class="note">Die Budgetstufen dienen nur zur Orientierung und sind keine aktuellen Produktpreise. Bitte Variante, Verfügbarkeit und die Alters- und Sicherheitshinweise beim Händler oder Hersteller prüfen. Die als „Werbung“ gekennzeichneten Amazon-Links sind Werbelinks. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p></section>
 
 </main>
 <footer><div class="shell foot"><div><a class="logo" href="#start">wunschwelt<span>.</span></a><p>Geschenkideen für Kinder, ohne langes Suchen.</p></div><div class="footnav"><a href="#stoebern">Entdecken</a><a href="#finder">Geschenkfinder</a><span>Impressum und Datenschutz vor kommerziellem Start ergänzen.</span></div></div></footer>
@@ -273,14 +273,14 @@ function draw(){
   const title=document.createElement("h3");title.textContent=p.title;
   const desc=document.createElement("p");desc.textContent=p.description;
   const link=document.createElement("a");link.className="shop-cta";link.href=productDestination(p);
-  link.target="_blank";link.rel="noopener noreferrer sponsored";link.setAttribute("aria-label",p.title+" bei Amazon ansehen – Werbung, Affiliate-Link");
+  link.target="_blank";link.rel="noopener noreferrer sponsored";link.setAttribute("aria-label",p.title+" bei Amazon ansehen – Werbelink");
   const caption=document.createElement("span");caption.className="shop-cta-caption";
   const primary=document.createElement("span");primary.className="shop-cta-label";primary.textContent="Bei Amazon ansehen";
-  const secondary=document.createElement("span");secondary.className="shop-cta-disclosure";secondary.textContent="Werbung · Affiliate-Link";
-  caption.append(primary,secondary);
+  caption.append(primary);
   const arrow=document.createElement("span");arrow.className="shop-cta-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
   link.append(caption,arrow);
-  card.append(meta,title,desc,link);root.append(card);
+  const disclosure=document.createElement("span");disclosure.className="shop-legal-note";disclosure.textContent="Werbung";
+  card.append(meta,title,desc,link,disclosure);root.append(card);
  }
  if(!matches.length){
   const empty=document.createElement("div");empty.className="empty-results";
