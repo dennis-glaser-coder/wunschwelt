@@ -4,6 +4,13 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#fffaf6">
 <meta name="description" content="wunschwelt. – liebevoll ausgesuchte Geschenkideen für Kinder. Finde passende Ideen nach Alter, Budget und Interessen.">
+<link rel="canonical" href="https://wunschwelt.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="wunschwelt.">
+<meta property="og:title" content="wunschwelt. – Geschenkideen für Kinder">
+<meta property="og:description" content="Geschenke nach Alter, Budget und Interessen finden. Dazu praktische Ideen für 3-Jährige, Pferdefans und größere Geschenke.">
+<meta property="og:url" content="https://wunschwelt.vercel.app/">
 <title>wunschwelt. | Geschenkideen für Kinder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +199,19 @@ section.content{padding-top:72px}
 .premium-shortcut:hover{color:#512e22}
 .premium-shortcut[aria-pressed="true"]{color:#402b26}
 @media(max-width:680px){.finder-shortcut{gap:3px}.premium-shortcut{padding-left:0}}
+
+/* Editorial links to themed guides: simple reading paths, no new product-card wall. */
+.guides-strip{padding:55px 0 45px;border-bottom:1px solid var(--line);scroll-margin-top:20px}
+.guides-head{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:end;margin-bottom:23px}
+.guides-head h2{font-size:clamp(29px,3.5vw,41px);margin:9px 0 0;line-height:1.15}
+.guides-head>p{font-size:14px;line-height:1.75;color:var(--muted);max-width:410px;margin:0}
+.guides-links{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid #e7d5ca}
+.guides-links a{display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none;padding:18px 9px 20px;border-bottom:1px solid #e7d5ca;transition:background .16s}
+.guides-links a:hover{background:#fbf0e9}
+.guides-links strong{font:400 clamp(23px,2.7vw,30px)/1.22 'DM Serif Display',Georgia,serif;display:block;letter-spacing:-.025em}
+.guides-links small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.guides-arr{font-size:22px;color:#ab6a51}
+@media(max-width:680px){.guides-strip{padding:40px 0 33px}.guides-head{display:block;margin-bottom:18px}.guides-head>p{margin-top:14px}.guides-links a{padding:15px 5px}.guides-links strong{font-size:23px}}
 </style>
 </head>
 <body>
@@ -214,6 +234,15 @@ section.content{padding-top:72px}
 <a class="path" href="#finder" data-focus="budget"><div><strong>Nach Budget</strong><small>Passende Ideen für deinen Preisrahmen.</small></div><span class="arr" aria-hidden="true">→</span></a>
 <a class="path" href="#finder" data-focus="interest"><div><strong>Nach Interessen</strong><small>Von Bauen bis Entdecken.</small></div><span class="arr" aria-hidden="true">→</span></a>
 </div></section>
+
+<section class="shell guides-strip" id="ratgeber" aria-labelledby="guide-heading">
+<div class="guides-head"><div><p class="eyebrow">Zum Weiterstöbern</p><h2 id="guide-heading">Schon eine Idee, wonach du suchst?</h2></div><p>Manchmal hilft ein konkretes Thema mehr als noch ein Filter. Hier findest du Geschenkideen nach Alter, Interessen oder Budget.</p></div>
+<div class="guides-links">
+<a href="./geschenke-fuer-3-jaehrige.html"><span><strong>Geschenke für 3-Jährige</strong><small>Spielen, bauen, entdecken</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
+<a href="./geschenke-fuer-pferdefans.html"><span><strong>Für kleine Pferdefans</strong><small>Schleich-Sets und Reiterhöfe</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
+<a href="./besondere-geschenke-bis-200-euro.html"><span><strong>Wenn es etwas Größeres sein darf</strong><small>Geschenkideen bis ca. 200 €</small></span><span class="guides-arr" aria-hidden="true">→</span></a>
+</div>
+</section>
 
 <section class="shop-results shell" id="ergebnisse" aria-labelledby="results-heading"><h2 id="results-heading">Das könnte passen.</h2><p class="results-intro">Eine kleine Auswahl statt endloser Listen. Unsere Kaufbuttons führen zu Amazon und sind Werbelinks.</p><div class="finder-tools"><div><strong>Geschenkideen für deine Auswahl</strong> <span id="resultCount" aria-live="polite"></span></div><button id="reset" class="reset" type="button">Filter zurücksetzen</button></div>
 <div id="results" class="results" aria-live="polite"></div><button id="more" type="button" class="more" hidden>Weitere Geschenkideen anzeigen <span aria-hidden="true">→</span></button>
